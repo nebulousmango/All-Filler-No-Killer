@@ -890,6 +890,84 @@ MonoBehaviour:
     F_Volume: 1
     B_PlayOnAwake: 0
     B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmFem1
+    AudioClip: {fileID: 8300000, guid: 4686eca93255c884494275bdf4a0b527, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmFem2
+    AudioClip: {fileID: 8300000, guid: 00cb0f4ff80603249a56600b4caf2f5b, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmFem3
+    AudioClip: {fileID: 8300000, guid: 7e094c93d7559474c95ae436c50b93be, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmFem4
+    AudioClip: {fileID: 8300000, guid: 8330a70a4eb21ae4a89e4e1e883c030a, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmFem5
+    AudioClip: {fileID: 8300000, guid: 0e2a8b4248f9aa746b9a3bda32c6872b, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmFem6
+    AudioClip: {fileID: 8300000, guid: 64a0365eb4b48c84abff38babb8b272d, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmMasc1
+    AudioClip: {fileID: 8300000, guid: f31c1e2d80b2b324aaf55989e01c486c, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmMasc2
+    AudioClip: {fileID: 8300000, guid: 539e809619bcba34f811ce1b4882f6e4, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmMasc3
+    AudioClip: {fileID: 8300000, guid: 6b96c2755f771284ab9f465242c8de9c, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmMasc4
+    AudioClip: {fileID: 8300000, guid: adf8ed88b6fec984ea4783dabe428e6f, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmMasc5
+    AudioClip: {fileID: 8300000, guid: 97b911b8112124240bdeec6d8c0a7553, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: HmmMasc6
+    AudioClip: {fileID: 8300000, guid: a7699170cf8e0d84099f98488c149685, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: Shh
+    AudioClip: {fileID: 8300000, guid: 801c3c9a0aac0d449b26ba1532d8afb1, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
 --- !u!4 &1265707654
 Transform:
   m_ObjectHideFlags: 0
