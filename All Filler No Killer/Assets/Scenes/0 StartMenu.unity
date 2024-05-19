@@ -853,6 +853,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1107708846}
   m_CullTransparentMesh: 1
+--- !u!1 &1265707652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1265707654}
+  - component: {fileID: 1265707653}
+  - component: {fileID: 1265707655}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1265707653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265707652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25d708b0d91add46b397cc0b9ebcaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundsData:
+  - AudioSource: {fileID: 0}
+    S_Name: Button
+    AudioClip: {fileID: 8300000, guid: 5bfca4b1cef596f4f9b656b201337d30, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
+--- !u!4 &1265707654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265707652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 357.2472, y: 191.62682, z: -0.42384923}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1265707655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265707652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c65ddafa34c42940997db754e83d055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1295077338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efcd5d8077c087c4e8f5bac446756021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  S_LevelA: 1 Scene1
+  S_LevelA: 2 Scene1
   S_LevelB: 
   S_LevelC: 
   S_LevelD: 

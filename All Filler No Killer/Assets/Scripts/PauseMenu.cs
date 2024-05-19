@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Pause()
     {
+        FindObjectOfType<AudioManager>().PlaySound("Button");
         Go_PauseMenuUI.SetActive(true);
         Go_ControlsUI.SetActive(false);
         Go_OverlayUI.SetActive(false);
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     void Resume()
     {
+        FindObjectOfType<AudioManager>().PlaySound("Button");
         Go_PauseMenuUI.SetActive(false);
         Go_ControlsUI.SetActive(false);
         Go_OverlayUI.SetActive(true);
@@ -48,6 +50,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Controls()
     {
+        FindObjectOfType<AudioManager>().PlaySound("Button");
         Go_ControlsUI.SetActive(true);
     }
 
