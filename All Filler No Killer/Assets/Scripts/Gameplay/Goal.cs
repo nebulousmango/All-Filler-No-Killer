@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    public bool isPlayerOppGoal;
+    [SerializeField] bool isPlayerOppGoal;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float speed;
-    public Rigidbody2D rb;
+    [SerializeField] float speed;
+    [SerializeField] Rigidbody2D rb;
     public Vector3 startPosition;
 
     private void Start()
