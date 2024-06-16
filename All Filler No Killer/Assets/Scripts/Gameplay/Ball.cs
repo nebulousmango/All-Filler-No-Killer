@@ -18,11 +18,19 @@ public class Ball : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         transform.position = startPosition;
-        Launch();
+        StartCoroutine(ResetCoroutine());
     }
 
     private void Launch()
     {
+        float x = Random.Range(0, 2) == 0 ? -1 : 1;
+        float y = Random.Range(0, 2) == 0 ? -1 : 1;
+        rb.velocity = new Vector2(speed * x, speed * y);
+    }
+
+    private IEnumerator ResetCoroutine()
+    {
+        yield return new WaitForSeconds(1);
         float x = Random.Range(0, 2) == 0 ? -1 : 1;
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
         rb.velocity = new Vector2(speed * x, speed * y);

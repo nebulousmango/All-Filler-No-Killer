@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
         Go_PauseMenuUI.SetActive(false);
         Go_ControlsUI.SetActive(false);
         Go_OverlayUI.SetActive(true);

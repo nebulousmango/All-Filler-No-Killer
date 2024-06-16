@@ -6,35 +6,79 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("Ball")]
-    public GameObject ball;
+    [SerializeField] GameObject ball;
 
     [Header("Player Opp")]
-    public GameObject playerOppPaddle;
-    public GameObject playerOppGoal;
+    [SerializeField] GameObject playerOppPaddle;
+    [SerializeField] GameObject playerOppGoal;
+    [SerializeField] TextMeshProUGUI oppScoreText;
 
     [Header("Player Gab")]
-    public GameObject playerGabPaddle;
-    public GameObject playerGabGoal;
+    [SerializeField] GameObject playerGabPaddle;
+    [SerializeField] GameObject playerGabGoal;
+    [SerializeField] TextMeshProUGUI playerScoreText;
 
+    [Header("Level End")]
+    [SerializeField] int levelEndScore;
+    [SerializeField] GameObject InPlayObjects;
+    [SerializeField] GameObject LevelEndPanel;
+    [SerializeField] TextMeshProUGUI finalOppScoreText;
+    [SerializeField] TextMeshProUGUI finalGabScoreText;
+
+    public bool LevelOver = false;
     private int PlayerOppScore;
     private int PlayerGabScore;
 
-    public void PlayerOppScored()
+    private void Start()
     {
-        PlayerOppScore++;
-        ResetPosition();
+        LevelEndPanel.SetActive(false);
+        InPlayObjects.SetActive(true);
+        LevelOver = false;
+    }
+
+    private void Update()
+    {
+        if((PlayerGabScore+ PlayerOppScore) == levelEndScore)
+        {
+            LevelOver = true;
+            EndLevel();
+        }
     }
 
     public void PlayerGabScored()
     {
         PlayerGabScore++;
         ResetPosition();
+        ChangeToTextPlayer("" + PlayerGabScore);
+    }
+
+    public void PlayerOppScored()
+    {
+        PlayerOppScore++;
+        ResetPosition();
+        ChangeToTextOpp("" + PlayerOppScore);
     }
 
     private void ResetPosition()
     {
         ball.GetComponent<Ball>().Reset();
-        playerOppPaddle.GetComponent<Paddle>().Reset();
-        playerGabPaddle.GetComponent<Paddle>().Reset();
+    }
+
+    void ChangeToTextOpp(string text)
+    {
+        oppScoreText.text = text;
+    }
+
+    void ChangeToTextPlayer(string text)
+    {
+        playerScoreText.text = text;
+    }
+
+    void EndLevel()
+    {
+        LevelEndPanel.SetActive(true);
+        InPlayObjects.SetActive(false);
+        finalGabScoreText.text = ("" + PlayerGabScore);
+        finalOppScoreText.text = ("" + PlayerOppScore);
     }
 }

@@ -14,7 +14,6 @@ public class ExitScene : MonoBehaviour, IPointerDownHandler
     {
         TurnThisOn.SetActive(true);
         TurnThisOff.SetActive(false);
-        FindObjectOfType<AudioManager>().PlaySound("Shh");
         StartCoroutine(NextScene());
     }
 

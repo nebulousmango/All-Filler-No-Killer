@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    [SerializeField] bool isPlayerOppGoal;
+    [SerializeField] bool isPlayerGoal;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Ball"))
         {
-            if (isPlayerOppGoal)
+            if (isPlayerGoal)
             {
-                GameObject.Find("GameManager").GetComponent<GameManager>().PlayerGabScored();
+                GameObject.Find("GameManager").GetComponent<GameManager>().PlayerOppScored();
             }
             else
             {
-                GameObject.Find("GameManager").GetComponent<GameManager>().PlayerOppScored();
+                GameObject.Find("GameManager").GetComponent<GameManager>().PlayerGabScored();
             }
         }
     }
