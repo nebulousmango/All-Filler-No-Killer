@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Attached to GameManager object in Level scenes.
+
     [Header("Ball")]
     [SerializeField] GameObject ball;
 

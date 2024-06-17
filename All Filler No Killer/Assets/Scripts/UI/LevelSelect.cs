@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
+    // Attached to Canvas object in 04_LevelSelect scene.
+
     [SerializeField] private string LevelOne;
     [SerializeField] private string LevelTwo;
     [SerializeField] private string LevelThree;

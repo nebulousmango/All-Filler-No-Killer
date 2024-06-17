@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     // Attached to Canvas object in various scenes.
+
     [SerializeField] private string S_LevelA;
     [SerializeField] private string S_LevelB;
     [SerializeField] private string S_LevelC;

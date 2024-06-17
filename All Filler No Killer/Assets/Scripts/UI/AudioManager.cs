@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    // Attached to AudioManager object in 00_StartMenu scene.
+
     public SoundData[] soundsData;
 
     private void Awake()

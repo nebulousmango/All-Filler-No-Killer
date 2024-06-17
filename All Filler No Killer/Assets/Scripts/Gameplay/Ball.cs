@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    // Attached to Ball object in Level scenes.
+
     [SerializeField] float speed;
     [SerializeField] Rigidbody2D rb;
     public Vector3 startPosition;

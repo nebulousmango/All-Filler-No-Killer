@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SetContinueLevel : MonoBehaviour
 {
+    // Attached to Canvas object in 01_GameMenu scene.
+
     public string S_ContinueLevel;
 
     public void ContinueLevel()

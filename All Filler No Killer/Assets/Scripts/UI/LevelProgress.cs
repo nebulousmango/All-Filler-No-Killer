@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelProgress : MonoBehaviour
 {
+    // Attached to Canvas object in Level scenes.
+
     public string NextScene;
     string CurrentScene;
 

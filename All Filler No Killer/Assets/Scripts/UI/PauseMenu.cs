@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    // Attached to Canvas object in Level scenes.
+
     [SerializeField] private GameObject Go_PauseMenuUI;
     [SerializeField] private GameObject Go_ControlsUI;
     static bool GameIsPaused = false;

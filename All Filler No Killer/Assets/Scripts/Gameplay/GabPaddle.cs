@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GabPaddle : MonoBehaviour
 {
+    // Attached to Player_Gab object in Level scenes.
+
     [SerializeField] bool isPlayerOpp;
     [SerializeField] float speed;
     [SerializeField] Rigidbody2D rb;

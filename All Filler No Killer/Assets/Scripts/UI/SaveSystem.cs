@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SaveSystem : MonoBehaviour
 {
+    // Attached to SaveManager object in 00_StartMenu scene.
+
     public string LastLevelPlayed;
 
     public void SaveLevelProgress()

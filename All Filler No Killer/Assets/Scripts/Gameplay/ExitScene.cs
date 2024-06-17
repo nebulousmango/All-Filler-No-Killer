@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ExitScene : MonoBehaviour, IPointerDownHandler
 {
+    // Attached to Selector objects in 02_Cutscene1.
+
     [SerializeField] GameObject TurnThisOn;
     [SerializeField] GameObject TurnThisOff;
     [SerializeField] private string S_nextScene;

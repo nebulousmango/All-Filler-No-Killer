@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class ClickImage : MonoBehaviour, IPointerDownHandler
 {
+    // Attached to Selector objects in 02_Cutscene1.
+
     [SerializeField] GameObject TurnThisOn;
     [SerializeField] GameObject TurnThisOff;
     [SerializeField] GameObject TurnThisOn1;

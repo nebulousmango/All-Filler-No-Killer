@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class OppPaddle : MonoBehaviour
 {
+    // Attached to Player_Opp object in Level scenes.
+
     [SerializeField] GameObject ball;
     [SerializeField] float speed;
     [SerializeField] float lerpSpeed = 1f;
