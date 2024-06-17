@@ -7,9 +7,10 @@ public class SaveSystem : MonoBehaviour
 {
     public string LastLevelPlayed;
 
-    void SaveLevel()
+    public void SaveLevelProgress()
     {
         PlayerPrefs.SetString("Level", LastLevelPlayed);
+        PlayerPrefs.Save();
     }
 
     public void LoadLastLevel()

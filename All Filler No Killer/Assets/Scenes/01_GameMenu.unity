@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   S_LevelA: 0 StartMenu
-  S_LevelB: 2 Intro
+  S_LevelB: 2 Cutscene1
   S_LevelC: 
   S_LevelD: 
 --- !u!114 &636265135
