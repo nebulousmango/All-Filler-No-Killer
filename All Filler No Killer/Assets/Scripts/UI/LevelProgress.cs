@@ -10,7 +10,7 @@ public class LevelProgress : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        NextScene = "4 LevelSelect";
+        NextScene = "04_LevelSelect";
         FindObjectOfType<AudioManager>().PlaySound("Button");
         Time.timeScale = 1;
         SceneManager.LoadScene(NextScene);

@@ -13,7 +13,7 @@ public class LevelSelect : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().PlaySound("Button");
         Time.timeScale = 1;
-        SceneManager.LoadScene("0 StartMenu");
+        SceneManager.LoadScene("00_StartMenu");
     }
 
     public void LoadLevelA()

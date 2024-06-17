@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
         LevelEndPanel.SetActive(false);
         InPlayObjects.SetActive(true);
         LevelOver = false;
