@@ -24,6 +24,5 @@ public class LevelProgress : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         CurrentScene = currentScene.name;
         FindObjectOfType<SaveSystem>().LastLevelPlayed = CurrentScene;
-        FindObjectOfType<SaveSystem>().SaveLevelProgress();
     }
 }

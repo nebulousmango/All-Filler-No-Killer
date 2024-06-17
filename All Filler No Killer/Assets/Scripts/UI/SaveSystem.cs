@@ -9,12 +9,6 @@ public class SaveSystem : MonoBehaviour
 
     public string LastLevelPlayed;
 
-    public void SaveLevelProgress()
-    {
-        PlayerPrefs.SetString("Level", LastLevelPlayed);
-        PlayerPrefs.Save();
-    }
-
     public void LoadLastLevel()
     {
         FindObjectOfType<AudioManager>().PlaySound("Button");
