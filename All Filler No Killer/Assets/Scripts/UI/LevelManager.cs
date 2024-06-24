@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelSelect : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
     // Attached to Canvas object in 04_LevelSelect scene.
 

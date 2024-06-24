@@ -1,18 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class OppPaddle : MonoBehaviour
+public class PaddleGab : MonoBehaviour
 {
-    // Attached to Player_Opp object in Level scenes.
+    // Attached to Player_Gab object in Level scenes.
 
-    [SerializeField] GameObject ball;
+    [SerializeField] bool isPlayerOpp;
     [SerializeField] float speed;
-    [SerializeField] float lerpSpeed = 1f;
     [SerializeField] Rigidbody2D rb;
-
     public Vector3 startPosition;
-    public bool isMoving = false;
-    public float timeMoving = 0f;
-    public Vector3 direction = Vector3.zero;
 
     [SerializeField] bool isPlayerMasc;
     [SerializeField] bool isPlayerFem;
@@ -21,27 +18,30 @@ public class OppPaddle : MonoBehaviour
     private string playFemVoice;
     private string playMascVoice;
 
-    private void Start()
+    private float movement;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        playFemVoice = voiceFemList[Random.Range(0, voiceFemList.Length)];
+        playMascVoice = voiceMascList[Random.Range(0, voiceMascList.Length)];
     }
 
-    void Update()
+    private void Start()
     {
-        if (ball.transform.position.y > transform.position.y)
+        startPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        if(isPlayerOpp)
         {
-            if (rb.velocity.y < 0) rb.velocity = Vector2.zero;
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.up * speed, lerpSpeed * Time.deltaTime);
-        }
-        else if (ball.transform.position.y < transform.position.y)
-        {
-            if (rb.velocity.y > 0) rb.velocity = Vector2.zero;
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.down * speed, lerpSpeed * Time.deltaTime);
+            movement = Input.GetAxisRaw("VerticalOpp");
         }
         else
         {
-            rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero * speed, lerpSpeed * Time.deltaTime);
+            movement = Input.GetAxisRaw("VerticalGab");
         }
+        rb.velocity = new Vector2(rb.velocity.x, movement * speed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
