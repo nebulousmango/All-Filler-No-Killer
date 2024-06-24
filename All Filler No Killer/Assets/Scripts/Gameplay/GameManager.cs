@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 {
     // Attached to GameManager object in Level scenes.
 
+    [Header("Object Groups")]
+    [SerializeField] GameObject pongObjects;
+    [SerializeField] GameObject talkObjects;
+
     [Header("Ball")]
     [SerializeField] GameObject ball;
 
@@ -19,6 +23,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerGabPaddle;
     [SerializeField] GameObject playerGabGoal;
     [SerializeField] TextMeshProUGUI playerScoreText;
+
+    [Header("Dialogue")]
+    public bool GameIsTalking;
 
     [Header("Level End")]
     [SerializeField] int levelEndScore;
@@ -33,7 +40,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Cursor.visible = true;
         LevelEndPanel.SetActive(false);
         InPlayObjects.SetActive(true);
         LevelOver = false;
@@ -45,6 +51,16 @@ public class GameManager : MonoBehaviour
         {
             LevelOver = true;
             EndLevel();
+        }
+        if(GameIsTalking==true)
+        {
+            pongObjects.SetActive(false);
+            talkObjects.SetActive(true);
+        }
+        if (GameIsTalking == false)
+        {
+            pongObjects.SetActive(true);
+            talkObjects.SetActive(false);
         }
     }
 

@@ -20,7 +20,13 @@ public class Ball : MonoBehaviour
     {
         rb.velocity = Vector2.zero;
         transform.position = startPosition;
-        StartCoroutine(ResetCoroutine());
+        StartCoroutine(ResetBallCoroutine());
+    }
+
+    public void OnHold()
+    {
+        rb.velocity = Vector2.zero;
+        transform.position = startPosition;
     }
 
     private void Launch()
@@ -30,7 +36,7 @@ public class Ball : MonoBehaviour
         rb.velocity = new Vector2(speed * x, speed * y);
     }
 
-    private IEnumerator ResetCoroutine()
+    private IEnumerator ResetBallCoroutine()
     {
         yield return new WaitForSeconds(1);
         float x = Random.Range(0, 2) == 0 ? -1 : 1;

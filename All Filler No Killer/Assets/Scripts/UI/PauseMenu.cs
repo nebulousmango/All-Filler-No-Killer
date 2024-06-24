@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        GameIsPaused = false;
         Go_PauseMenuUI.SetActive(false);
         Go_ControlsUI.SetActive(false);
     }
