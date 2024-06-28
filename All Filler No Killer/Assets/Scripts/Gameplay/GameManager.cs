@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
         LevelEndPanel.SetActive(false);
         InPlayObjects.SetActive(true);
         LevelOver = false;
+        GameIsTalking = true;
+        levelEndScore = FindObjectOfType<StoryManager>().DialogueSequenceUnlocked.Length;
     }
 
     private void Update()

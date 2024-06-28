@@ -26,7 +26,7 @@ public class LevelListManager : MonoBehaviour
             LevelLockedObject.SetActive(true);
         }
 
-        for (int i = 0; i < IsLevelComplete.Length; i++)
+        for (int i = 0; i < IsLevelComplete.Length-1; i++)
         {
             if (IsLevelComplete[i] == true)
             {
@@ -34,6 +34,11 @@ public class LevelListManager : MonoBehaviour
                 LevelLockedObjects[i].SetActive(false);
                 LevelUnlockedObjects[i+1].SetActive(true);
                 LevelLockedObjects[i+1].SetActive(false);
+            }
+            if (IsLevelComplete[IsLevelComplete.Length] == true)
+            {
+                LevelUnlockedObjects[IsLevelComplete.Length].SetActive(true);
+                LevelLockedObjects[IsLevelComplete.Length].SetActive(false);
             }
         }
     }
