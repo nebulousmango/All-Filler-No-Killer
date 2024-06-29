@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour
 
     // UI references
     public GameObject DialogueParent; // Main container for dialogue UI
-    public TextMeshProUGUI DialogTitleText, DialogBodyText; // Text components for title and body
+    public TextMeshPro DialogBodyText; // Text components for title and body
     public GameObject responseButtonPrefab; // Prefab for generating response buttons
     public Transform responseButtonContainer; // Container to hold response buttons
 
@@ -36,7 +36,6 @@ public class DialogueManager : MonoBehaviour
         ShowDialogue();
 
         // Set dialogue title and body text
-        DialogTitleText.text = title;
         DialogBodyText.text = node.dialogueText;
 
         // Remove any existing response buttons

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92a482d243e30744900382d4ff22d9c, type: 3}
+  m_Name: DialogueLevel1
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: Hi?
+    responses:
+    - responseText: Hey Harpo! Remember me?
+      nextNode:
+        dialogueText: Have we met?
+        responses:
+        - responseText: It's me, Gab...you called me a blabbermouth once.
+          nextNode:
+            dialogueText: Oh...I remember.
+            responses:
+            - responseText: Look, the little ones have learnt to talk!
+              nextNode:
+                dialogueText: So they have. Now just leave them be.
+                responses:
+                - responseText: Maybe I could drop in for a chat.
+                  nextNode:
+                    dialogueText: "I don\u2019t like the sound of that."
+                    responses:
+                    - responseText: Not to worry, you won't get any trouble from
+                        me.
+                      nextNode:
+                        dialogueText: 
+                - responseText: "Why? I\u2019m going to start a war!"
+                  nextNode:
+                    dialogueText: "I don\u2019t like the sound of that!"
+                    responses:
+                    - responseText: Relax, I won't wipe them out.
+                      nextNode:
+                        dialogueText: 
+                - responseText: Whatever you say.
+                  nextNode:
+                    dialogueText: I've got my eye on you, tricky one.
+                    responses:
+                    - responseText: Go ahead! You won't catch me doing any mischief.
+                      nextNode:
+                        dialogueText: 
