@@ -35,11 +35,6 @@ public class LevelListManager : MonoBehaviour
                 LevelUnlockedObjects[i+1].SetActive(true);
                 LevelLockedObjects[i+1].SetActive(false);
             }
-            if (IsLevelComplete[IsLevelComplete.Length] == true)
-            {
-                LevelUnlockedObjects[IsLevelComplete.Length].SetActive(true);
-                LevelLockedObjects[IsLevelComplete.Length].SetActive(false);
-            }
         }
     }
 }
