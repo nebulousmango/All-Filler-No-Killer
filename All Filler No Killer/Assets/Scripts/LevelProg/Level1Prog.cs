@@ -65,4 +65,12 @@ public class Level1Prog : MonoBehaviour
         yield return new WaitForSeconds(6);
         FtuePrompt1.SetActive(true);
     }
+
+    IEnumerator SwitchOnPong()
+    {
+        FindObjectOfType<GameManager>().GameIsTalking = false;
+        yield return new WaitForSeconds(0.1f);
+        FindObjectOfType<Ball>().Reset();
+    }
+
 }
