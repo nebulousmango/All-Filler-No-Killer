@@ -17,12 +17,12 @@ public class GameManager : MonoBehaviour
     [Header("Player Opp")]
     [SerializeField] GameObject playerOppPaddle;
     [SerializeField] GameObject playerOppGoal;
-    [SerializeField] TextMeshProUGUI oppScoreText;
+    [SerializeField] TextMeshPro oppScoreText;
 
     [Header("Player Gab")]
     [SerializeField] GameObject playerGabPaddle;
     [SerializeField] GameObject playerGabGoal;
-    [SerializeField] TextMeshProUGUI playerScoreText;
+    [SerializeField] TextMeshPro playerScoreText;
 
     [Header("Dialogue")]
     // GameMode = 0 is when Game is in Pong mode.
