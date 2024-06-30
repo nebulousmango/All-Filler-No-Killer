@@ -28,7 +28,6 @@ public class StoryManager : MonoBehaviour
     [SerializeField] Animator animMult3DialogueGab;
 
     [Header("Times")]
-    [SerializeField] float readingTime;
     [SerializeField] float animPlayTime;
 
     [Header("Bools for Gab single dialogue")]
@@ -59,6 +58,8 @@ public class StoryManager : MonoBehaviour
         DialogueOpp.SetActive(false);
 
         StartCoroutine(FirstSceneDialogue());
+        int dialogueSequenceInt = (FindObjectOfType<LevelSequence>().LevelEndInt) + 2;
+        DialogueSequenceUnlocked = new bool[dialogueSequenceInt];
     }
 
     private void Update()
@@ -195,7 +196,7 @@ public class StoryManager : MonoBehaviour
 
     IEnumerator FirstSceneDialogue()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         b_SwitchOnGabDialogue = true;
     }
 }

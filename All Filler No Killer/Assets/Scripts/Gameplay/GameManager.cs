@@ -25,11 +25,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI playerScoreText;
 
     [Header("Dialogue")]
-    public bool GameIsTalking;
+    // GameMode = 0 is when Game is in Pong mode.
+    // GameMode = 1 is when Game is in Talking mode.
+    // GameMode = 2 is when Game is in LevelEnd mode.
+    public int GameMode;
 
     [Header("Level End")]
-    [SerializeField] int levelEndScore;
-    [SerializeField] GameObject InPlayObjects;
     [SerializeField] GameObject LevelEndPanel;
     [SerializeField] TextMeshProUGUI finalOppScoreText;
     [SerializeField] TextMeshProUGUI finalGabScoreText;
@@ -41,25 +42,18 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         LevelEndPanel.SetActive(false);
-        InPlayObjects.SetActive(true);
         LevelOver = false;
-        GameIsTalking = true;
-        levelEndScore = FindObjectOfType<StoryManager>().DialogueSequenceUnlocked.Length;
+        GameMode = 1;
     }
 
     private void Update()
     {
-        if((PlayerGabScore+ PlayerOppScore) == levelEndScore)
-        {
-            LevelOver = true;
-            EndLevel();
-        }
-        if(GameIsTalking==true)
+        if(GameMode==1)
         {
             pongObjects.SetActive(false);
             talkObjects.SetActive(true);
         }
-        if (GameIsTalking == false)
+        if (GameMode == 0)
         {
             pongObjects.SetActive(true);
             talkObjects.SetActive(false);
@@ -71,6 +65,7 @@ public class GameManager : MonoBehaviour
         PlayerGabScore++;
         ResetPosition();
         ChangeToTextPlayer("" + PlayerGabScore);
+        GameMode = 1;
     }
 
     public void PlayerOppScored()
@@ -78,6 +73,7 @@ public class GameManager : MonoBehaviour
         PlayerOppScore++;
         ResetPosition();
         ChangeToTextOpp("" + PlayerOppScore);
+        GameMode = 1;
     }
 
     private void ResetPosition()
@@ -95,10 +91,18 @@ public class GameManager : MonoBehaviour
         playerScoreText.text = text;
     }
 
-    void EndLevel()
+    public void EndLevel()
     {
+        StartCoroutine(SwitchOffSceneObjects());
+    }
+
+    IEnumerator SwitchOffSceneObjects()
+    {
+        GameMode = 3;
+        pongObjects.SetActive(false);
+        talkObjects.SetActive(false);
+        yield return new WaitForSeconds(0.01f);
         LevelEndPanel.SetActive(true);
-        InPlayObjects.SetActive(false);
         finalGabScoreText.text = ("" + PlayerGabScore);
         finalOppScoreText.text = ("" + PlayerOppScore);
     }
