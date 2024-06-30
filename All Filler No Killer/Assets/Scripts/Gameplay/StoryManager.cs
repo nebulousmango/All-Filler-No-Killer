@@ -113,6 +113,12 @@ public class StoryManager : MonoBehaviour
         }
     }
 
+    public void AdvanceDialogueSequence()
+    {
+        i++;
+        DialogueSequenceUnlocked[i] = true;
+    }
+
     public void StartGabDialogueSing()
     {
         StartCoroutine(StartGabDialogueSingCoroutine());

@@ -177,8 +177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TurnThisOn: {fileID: 975336016}
   TurnThisOff: {fileID: 77308296}
-  TurnThisOn1: {fileID: 0}
-  TurnThisOff2: {fileID: 0}
+  TurnThisOn1: {fileID: 512010771}
+  TurnThisOff2: {fileID: 512010771}
 --- !u!114 &77308299
 MonoBehaviour:
   m_ObjectHideFlags: 0
