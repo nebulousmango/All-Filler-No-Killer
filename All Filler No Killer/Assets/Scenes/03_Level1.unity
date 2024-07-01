@@ -5344,6 +5344,8 @@ MonoBehaviour:
   finalOppScoreText: {fileID: 2073956391}
   finalGabScoreText: {fileID: 1007155156}
   LevelOver: 0
+  PlayerOppScore: 0
+  PlayerGabScore: 0
 --- !u!4 &1404990769
 Transform:
   m_ObjectHideFlags: 0
@@ -7742,25 +7744,33 @@ MonoBehaviour:
   - They've learnt to talk!
   - People. On this planet!
   - '[Gab Multiple]'
-  - Relax, I won't make trouble.
+  - '[Gab Multiple]'
+  - You know me so well!
   OppDialogueList:
   - Gab...hello.
   - Hear what?
   - Who has?
   - Not them too! Leave them be.
   - I don't like how that sounds.
+  - You don't mean it do you?
   GabMultDialogueList:
   - I think I'll drop in to chat.
   - Why? It'll be fun!
   - Whatever you say, Harpo.
+  - Relax, I won't wipe them out.
+  - Don't worry, I'll be good.
+  - Who do you take me for?
   GabMult1DialogueTypes:
   - A
+  - B
   GabMult2DialogueTypes:
   - B
+  - C
   GabMult3DialogueTypes:
   - C
-  GabMultDialogueInt: 07000000
-  LevelEndInt: 10
+  - A
+  GabMultDialogueInt: 0700000009000000
+  LevelEndInt: 12
   GabMultipleActive: 0
   GabMultSelection1: {fileID: 508200162}
   GabMultSelection2: {fileID: 944415322}
@@ -7768,7 +7778,7 @@ MonoBehaviour:
   GabMultSelection1On: 0
   GabMultSelection2On: 0
   GabMultSelection3On: 0
-  ReadingTimer: 10
+  ExposedReadingTimer: 10
   TimerUI: {fileID: 27237413}
   TimerText: {fileID: 430933774}
 --- !u!1 &1899269345

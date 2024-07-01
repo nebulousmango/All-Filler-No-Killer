@@ -13,6 +13,7 @@ public class LevelSequence : MonoBehaviour
     PaddleOpp PaddleOpp;
     int DialogueSequenceInt;
     int DownArrowInt;
+    int PongSequenceInt;
 
     [Header("Level bools")]
     [SerializeField] bool Level1;
@@ -51,14 +52,14 @@ public class LevelSequence : MonoBehaviour
     [SerializeField] bool GabMultSelection1On;
     [SerializeField] bool GabMultSelection2On;
     [SerializeField] bool GabMultSelection3On;
-    [SerializeField] float ReadingTimer;
+    [SerializeField] float ExposedReadingTimer;
+    float ReadingTimer;
     [SerializeField] GameObject TimerUI;
     [SerializeField] TMP_Text TimerText;
-    [SerializeField] int GabDialogueScore;
-    [SerializeField] int OppDialogueScore;
 
     private void Start()
     {
+        ReadingTimer = ExposedReadingTimer;
         GameManager = FindObjectOfType<GameManager>();
         StoryManager = FindObjectOfType<StoryManager>();
         Ball = FindObjectOfType<Ball>();
@@ -144,6 +145,15 @@ public class LevelSequence : MonoBehaviour
                         DialogueGabMult2.text = GabMultDialogueList[1];
                         DialogueGabMult3.text = GabMultDialogueList[2];
                     }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[1])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[3];
+                        DialogueGabMult2.text = GabMultDialogueList[4];
+                        DialogueGabMult3.text = GabMultDialogueList[5];
+                    }
                 }
 
                 if (DialogueSequenceInt == LevelEndInt)
@@ -164,7 +174,7 @@ public class LevelSequence : MonoBehaviour
                 if (Level1)
                 {
                     // Checks for an odd dialogueSequenceInt
-                    if (DialogueSequenceInt % 2 == 1 && DialogueSequenceInt != GabMultDialogueInt[0])
+                    if (DialogueSequenceInt % 2 == 1 && DialogueSequenceInt != GabMultDialogueInt[0] && DialogueSequenceInt != GabMultDialogueInt[1])
                     {
                         // Gab dialogue plays
                         // Switch off Opp's dialogue and switch on Gab's dialogue
@@ -179,6 +189,7 @@ public class LevelSequence : MonoBehaviour
 
     void SwitchOnGabMultiple()
     {
+        ReadingTimer = ExposedReadingTimer;
         GabMultipleActive = true;
         TimerUI.SetActive(true);
         StoryManager.b_SwitchOffGabDialogue = true;
@@ -203,84 +214,79 @@ public class LevelSequence : MonoBehaviour
 
     IEnumerator SwitchOnPong()
     {
+        PongSequenceInt++;
         GameManager.GameMode = 0;
         yield return new WaitForSeconds(0.01f);
         Ball.Reset();
         if(GabMultSelection1On)
         {
-            for (int i = 0; i < GabMult1DialogueTypes.Length; i++)
-            {
-                if (GabMult1DialogueTypes[i] == "A")
+                if (GabMult1DialogueTypes[PongSequenceInt-1] == "A")
                 {
                     GabMultTypeA();
                 }
-                if (GabMult1DialogueTypes[i] == "B")
+                if (GabMult1DialogueTypes[PongSequenceInt - 1] == "B")
                 {
                     GabMultTypeB();
                 }
-                if (GabMult1DialogueTypes[i] == "C")
+                if (GabMult1DialogueTypes[PongSequenceInt - 1] == "C")
                 {
                     GabMultTypeC();
                 }
-            }
         }
         if (GabMultSelection2On)
         {
-            for (int i = 0; i < GabMult2DialogueTypes.Length; i++)
-            {
-                if (GabMult2DialogueTypes[i] == "A")
+                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "A")
                 {
                     GabMultTypeA();
                 }
-                if (GabMult2DialogueTypes[i] == "B")
+                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "B")
                 {
                     GabMultTypeB();
                 }
-                if (GabMult2DialogueTypes[i] == "C")
+                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "C")
                 {
                     GabMultTypeC();
                 }
-            }
         }
         if (GabMultSelection3On)
         {
-            for (int i = 0; i < GabMult3DialogueTypes.Length; i++)
-            {
-                if (GabMult3DialogueTypes[i] == "A")
+                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "A")
                 {
                     GabMultTypeA();
                 }
-                if (GabMult3DialogueTypes[i] == "B")
+                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "B")
                 {
                     GabMultTypeB();
                 }
-                if (GabMult3DialogueTypes[i] == "C")
+                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "C")
                 {
                     GabMultTypeC();
                 }
-            }
         }
     }
 
+    // Good dialogue option
     void GabMultTypeA()
     {
         Ball.BallVersionA();
-        GameManager.PlayerGabScore--;
+        GameManager.PlayerGabScore++;
         GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
     }
-
+    
+    // Bad dialogue option
     void GabMultTypeB()
     {
         Ball.BallVersionB();
         PaddleOpp.speed = 9;
-        GameManager.PlayerGabScore++;
+        GameManager.PlayerOppScore++;
         GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
     }
 
+    // Ugly dialogue option
     void GabMultTypeC()
     {
         Ball.BallVersionC();
-        GameManager.PlayerOppScore++;
+        GameManager.PlayerOppScore = GameManager.PlayerOppScore + 2;
         GameManager.ChangeToTextOpp("" + GameManager.PlayerOppScore);
     }
 

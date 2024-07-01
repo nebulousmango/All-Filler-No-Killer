@@ -55,7 +55,7 @@ public class Ball : MonoBehaviour
     public void BallVersionB()
     {
         rb.gravityScale = 0.1f;
-        speed = 4.5f;
+        speed = 4.6f;
     }
 
     public void BallVersionC()
