@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI finalGabScoreText;
 
     public bool LevelOver = false;
-    private int PlayerOppScore;
-    private int PlayerGabScore;
+    public int PlayerOppScore;
+    public int PlayerGabScore;
 
     private void Start()
     {
@@ -81,12 +81,12 @@ public class GameManager : MonoBehaviour
         ball.GetComponent<Ball>().Reset();
     }
 
-    void ChangeToTextOpp(string text)
+    public void ChangeToTextOpp(string text)
     {
         oppScoreText.text = text;
     }
 
-    void ChangeToTextPlayer(string text)
+    public void ChangeToTextPlayer(string text)
     {
         playerScoreText.text = text;
     }

@@ -48,19 +48,19 @@ public class Ball : MonoBehaviour
 
     public void BallVersionA()
     {
-        rb.gravityScale = 0.1f;
-        speed = 8;
+        rb.gravityScale = 0;
+        speed = 4;
     }
 
     public void BallVersionB()
     {
-        rb.gravityScale = 0.2f;
-        speed = 8;
+        rb.gravityScale = 0.1f;
+        speed = 4.5f;
     }
 
     public void BallVersionC()
     {
-        rb.gravityScale = 0.3f;
-        speed = 8;
+        rb.gravityScale = 0;
+        speed = 4.5f;
     }
 }

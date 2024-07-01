@@ -7,8 +7,10 @@ public class LevelSequence : MonoBehaviour
 {
     // Attached to LevelProg object in every Level scene.
 
+    GameManager GameManager;
     StoryManager StoryManager;
     Ball Ball;
+    PaddleOpp PaddleOpp;
     int DialogueSequenceInt;
     int DownArrowInt;
 
@@ -41,7 +43,7 @@ public class LevelSequence : MonoBehaviour
     [SerializeField] int[] GabMultDialogueInt;
     [SerializeField] public int LevelEndInt;
 
-    [Header("Gab multiple dialogue UI")]
+    [Header("Gab multiple dialogue")]
     public bool GabMultipleActive;
     [SerializeField] GameObject GabMultSelection1;
     [SerializeField] GameObject GabMultSelection2;
@@ -52,11 +54,15 @@ public class LevelSequence : MonoBehaviour
     [SerializeField] float ReadingTimer;
     [SerializeField] GameObject TimerUI;
     [SerializeField] TMP_Text TimerText;
+    [SerializeField] int GabDialogueScore;
+    [SerializeField] int OppDialogueScore;
 
     private void Start()
     {
+        GameManager = FindObjectOfType<GameManager>();
         StoryManager = FindObjectOfType<StoryManager>();
         Ball = FindObjectOfType<Ball>();
+        PaddleOpp = FindObjectOfType<PaddleOpp>();
         DialogueGabSing.text = GabDialogueList[0];
     }
 
@@ -197,7 +203,7 @@ public class LevelSequence : MonoBehaviour
 
     IEnumerator SwitchOnPong()
     {
-        FindObjectOfType<GameManager>().GameMode = 0;
+        GameManager.GameMode = 0;
         yield return new WaitForSeconds(0.01f);
         Ball.Reset();
         if(GabMultSelection1On)
@@ -259,21 +265,28 @@ public class LevelSequence : MonoBehaviour
     void GabMultTypeA()
     {
         Ball.BallVersionA();
+        GameManager.PlayerGabScore--;
+        GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
     }
 
     void GabMultTypeB()
     {
         Ball.BallVersionB();
+        PaddleOpp.speed = 9;
+        GameManager.PlayerGabScore++;
+        GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
     }
 
     void GabMultTypeC()
     {
         Ball.BallVersionC();
+        GameManager.PlayerOppScore++;
+        GameManager.ChangeToTextOpp("" + GameManager.PlayerOppScore);
     }
 
     void EndLevel()
     {
-        FindObjectOfType<GameManager>().EndLevel();
-        FindObjectOfType<GameManager>().LevelOver = true;
+        GameManager.EndLevel();
+        GameManager.LevelOver = true;
     }
 }
