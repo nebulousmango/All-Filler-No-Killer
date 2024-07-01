@@ -8,8 +8,8 @@ public class LevelSequence : MonoBehaviour
     // Attached to LevelProg object in every Level scene.
 
     StoryManager StoryManager;
+    Ball Ball;
     int DialogueSequenceInt;
-    bool GabMultipleActive;
     int DownArrowInt;
 
     [Header("Level bools")]
@@ -33,15 +33,22 @@ public class LevelSequence : MonoBehaviour
     [SerializeField] string[] GabDialogueList;
     [SerializeField] string[] OppDialogueList;
     [SerializeField] string[] GabMultDialogueList;
+    [SerializeField] string[] GabMult1DialogueTypes;
+    [SerializeField] string[] GabMult2DialogueTypes;
+    [SerializeField] string[] GabMult3DialogueTypes;
 
     [Header("Sequence ints")]
     [SerializeField] int[] GabMultDialogueInt;
     [SerializeField] public int LevelEndInt;
 
     [Header("Gab multiple dialogue UI")]
+    public bool GabMultipleActive;
     [SerializeField] GameObject GabMultSelection1;
     [SerializeField] GameObject GabMultSelection2;
     [SerializeField] GameObject GabMultSelection3;
+    [SerializeField] bool GabMultSelection1On;
+    [SerializeField] bool GabMultSelection2On;
+    [SerializeField] bool GabMultSelection3On;
     [SerializeField] float ReadingTimer;
     [SerializeField] GameObject TimerUI;
     [SerializeField] TMP_Text TimerText;
@@ -49,6 +56,7 @@ public class LevelSequence : MonoBehaviour
     private void Start()
     {
         StoryManager = FindObjectOfType<StoryManager>();
+        Ball = FindObjectOfType<Ball>();
         DialogueGabSing.text = GabDialogueList[0];
     }
 
@@ -79,18 +87,27 @@ public class LevelSequence : MonoBehaviour
                 GabMultSelection1.SetActive(true);
                 GabMultSelection2.SetActive(false);
                 GabMultSelection3.SetActive(false);
+                GabMultSelection1On = true;
+                GabMultSelection2On = false;
+                GabMultSelection3On = false;
             }
             if (DownArrowInt == 2)
             {
                 GabMultSelection1.SetActive(false);
                 GabMultSelection2.SetActive(true);
                 GabMultSelection3.SetActive(false);
+                GabMultSelection1On = false;
+                GabMultSelection2On = true;
+                GabMultSelection3On = false;
             }
             if (DownArrowInt == 3)
             {
                 GabMultSelection1.SetActive(false);
                 GabMultSelection2.SetActive(false);
                 GabMultSelection3.SetActive(true);
+                GabMultSelection1On = false;
+                GabMultSelection2On = false;
+                GabMultSelection3On = true;
             }
             if (DownArrowInt > 3)
             {
@@ -98,6 +115,9 @@ public class LevelSequence : MonoBehaviour
                 GabMultSelection1.SetActive(true);
                 GabMultSelection2.SetActive(false);
                 GabMultSelection3.SetActive(false);
+                GabMultSelection1On = true;
+                GabMultSelection2On = false;
+                GabMultSelection3On = false;
             }
         }
 
@@ -118,12 +138,8 @@ public class LevelSequence : MonoBehaviour
                         DialogueGabMult2.text = GabMultDialogueList[1];
                         DialogueGabMult3.text = GabMultDialogueList[2];
                     }
-                    if (DialogueSequenceInt == GabMultDialogueInt[0] + 1)
-                    {
-                        SwitchOffGabMultiple();
-                        StartCoroutine(SwitchOnPong());
-                    }
                 }
+
                 if (DialogueSequenceInt == LevelEndInt)
                 {
                     EndLevel();
@@ -162,6 +178,13 @@ public class LevelSequence : MonoBehaviour
         StoryManager.b_SwitchOffGabDialogue = true;
         StoryManager.b_SwitchOffOppDialogue = true;
         StoryManager.b_SwitchOnGabMultDialogue = true;
+        GabMultSelection1.SetActive(true);
+        GabMultSelection2.SetActive(false);
+        GabMultSelection3.SetActive(false);
+        GabMultSelection1On = true;
+        GabMultSelection2On = false;
+        GabMultSelection3On = false;
+        DownArrowInt = 1;
     }
 
     void SwitchOffGabMultiple()
@@ -176,7 +199,76 @@ public class LevelSequence : MonoBehaviour
     {
         FindObjectOfType<GameManager>().GameMode = 0;
         yield return new WaitForSeconds(0.01f);
-        FindObjectOfType<Ball>().Reset();
+        Ball.Reset();
+        if(GabMultSelection1On)
+        {
+            for (int i = 0; i < GabMult1DialogueTypes.Length; i++)
+            {
+                if (GabMult1DialogueTypes[i] == "A")
+                {
+                    GabMultTypeA();
+                }
+                if (GabMult1DialogueTypes[i] == "B")
+                {
+                    GabMultTypeB();
+                }
+                if (GabMult1DialogueTypes[i] == "C")
+                {
+                    GabMultTypeC();
+                }
+            }
+        }
+        if (GabMultSelection2On)
+        {
+            for (int i = 0; i < GabMult2DialogueTypes.Length; i++)
+            {
+                if (GabMult2DialogueTypes[i] == "A")
+                {
+                    GabMultTypeA();
+                }
+                if (GabMult2DialogueTypes[i] == "B")
+                {
+                    GabMultTypeB();
+                }
+                if (GabMult2DialogueTypes[i] == "C")
+                {
+                    GabMultTypeC();
+                }
+            }
+        }
+        if (GabMultSelection3On)
+        {
+            for (int i = 0; i < GabMult3DialogueTypes.Length; i++)
+            {
+                if (GabMult3DialogueTypes[i] == "A")
+                {
+                    GabMultTypeA();
+                }
+                if (GabMult3DialogueTypes[i] == "B")
+                {
+                    GabMultTypeB();
+                }
+                if (GabMult3DialogueTypes[i] == "C")
+                {
+                    GabMultTypeC();
+                }
+            }
+        }
+    }
+
+    void GabMultTypeA()
+    {
+        Ball.BallVersionA();
+    }
+
+    void GabMultTypeB()
+    {
+        Ball.BallVersionB();
+    }
+
+    void GabMultTypeC()
+    {
+        Ball.BallVersionC();
     }
 
     void EndLevel()

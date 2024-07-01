@@ -18,6 +18,8 @@ public class Ball : MonoBehaviour
 
     public void Reset()
     {
+        rb.gravityScale = 0;
+        speed = 4;
         rb.velocity = Vector2.zero;
         transform.position = startPosition;
         StartCoroutine(ResetBallCoroutine());
@@ -44,4 +46,21 @@ public class Ball : MonoBehaviour
         rb.velocity = new Vector2(speed * x, speed * y);
     }
 
+    public void BallVersionA()
+    {
+        rb.gravityScale = 0.1f;
+        speed = 8;
+    }
+
+    public void BallVersionB()
+    {
+        rb.gravityScale = 0.2f;
+        speed = 8;
+    }
+
+    public void BallVersionC()
+    {
+        rb.gravityScale = 0.3f;
+        speed = 8;
+    }
 }

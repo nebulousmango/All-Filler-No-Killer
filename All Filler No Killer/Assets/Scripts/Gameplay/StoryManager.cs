@@ -7,6 +7,7 @@ public class StoryManager : MonoBehaviour
     // Attached to GameManager object in Level scenes.
 
     int i = -1;
+    LevelSequence LevelSequence;
 
     [Header("Speech bubble objects")]
     [SerializeField] GameObject SingleDialogueGab;
@@ -60,11 +61,13 @@ public class StoryManager : MonoBehaviour
         StartCoroutine(FirstSceneDialogue());
         int dialogueSequenceInt = (FindObjectOfType<LevelSequence>().LevelEndInt) + 2;
         DialogueSequenceUnlocked = new bool[dialogueSequenceInt];
+
+        LevelSequence = FindObjectOfType<LevelSequence>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && LevelSequence.GabMultipleActive == false)
         {
             i++;
             DialogueSequenceUnlocked[i] = true;

@@ -7753,11 +7753,21 @@ MonoBehaviour:
   - I think I'll drop in to chat.
   - Why? It'll be fun!
   - Whatever you say, Harpo.
+  GabMult1DialogueTypes:
+  - A
+  GabMult2DialogueTypes:
+  - B
+  GabMult3DialogueTypes:
+  - C
   GabMultDialogueInt: 07000000
   LevelEndInt: 10
+  GabMultipleActive: 0
   GabMultSelection1: {fileID: 508200162}
   GabMultSelection2: {fileID: 944415322}
   GabMultSelection3: {fileID: 1844332543}
+  GabMultSelection1On: 0
+  GabMultSelection2On: 0
+  GabMultSelection3On: 0
   ReadingTimer: 10
   TimerUI: {fileID: 27237413}
   TimerText: {fileID: 430933774}
