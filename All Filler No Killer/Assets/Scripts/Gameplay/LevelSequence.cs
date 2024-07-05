@@ -14,6 +14,7 @@ public class LevelSequence : MonoBehaviour
     int DialogueSequenceInt;
     int DownArrowInt;
     int PongSequenceInt;
+    public bool PongFTUE;
 
     [Header("Level bools")]
     [SerializeField] bool Level1;
@@ -65,6 +66,10 @@ public class LevelSequence : MonoBehaviour
         Ball = FindObjectOfType<Ball>();
         PaddleOpp = FindObjectOfType<PaddleOpp>();
         DialogueGabSing.text = GabDialogueList[0];
+        if(Level1)
+        {
+            FtuePrompts[0].SetActive(true);
+        }    
     }
 
     private void Update()
@@ -140,7 +145,7 @@ public class LevelSequence : MonoBehaviour
                     if (DialogueSequenceInt == GabMultDialogueInt[0])
                     {
                         StoryManager.b_SwitchOffGabDialogue = true;
-                        SwitchOnGabMultiple();
+                        StartCoroutine(SwitchOnGabMultipleFTUE());
                         DialogueGabMult1.text = GabMultDialogueList[0];
                         DialogueGabMult2.text = GabMultDialogueList[1];
                         DialogueGabMult3.text = GabMultDialogueList[2];
@@ -179,8 +184,13 @@ public class LevelSequence : MonoBehaviour
                         // Gab dialogue plays
                         // Switch off Opp's dialogue and switch on Gab's dialogue
                         StoryManager.b_SwitchOffOppDialogue = true;
-                        StoryManager.b_SwitchOnGabDialogue = true;
+                        StoryManager.b_SwitchOnGabDialogue = true; 
                         DialogueGabSing.text = GabDialogueList[(DialogueSequenceInt + 1) / 2];
+                    }
+
+                    if (DialogueSequenceInt == 0)
+                    {
+                        FtuePrompts[0].SetActive(false);
                     }
                 }
             }
@@ -204,6 +214,30 @@ public class LevelSequence : MonoBehaviour
         DownArrowInt = 1;
     }
 
+    IEnumerator SwitchOnGabMultipleFTUE()
+    {
+        PongFTUE = true;
+        GabMultipleActive = true;
+        StoryManager.b_SwitchOffGabDialogue = true;
+        StoryManager.b_SwitchOffOppDialogue = true;
+        StoryManager.b_SwitchOnGabMultDialogue = true;
+        GabMultSelection1.SetActive(true);
+        GabMultSelection2.SetActive(false);
+        GabMultSelection3.SetActive(false);
+        GabMultSelection1On = true;
+        GabMultSelection2On = false;
+        GabMultSelection3On = false;
+        DownArrowInt = 1;
+        FtuePrompts[1].SetActive(true);
+        yield return new WaitForSeconds(4);
+        FtuePrompts[2].SetActive(true);
+        yield return new WaitForSeconds(4);
+        FtuePrompts[1].SetActive(false);
+        FtuePrompts[2].SetActive(false);
+        ReadingTimer = ExposedReadingTimer;
+        TimerUI.SetActive(true);
+    }
+
     void SwitchOffGabMultiple()
     {
         GabMultipleActive = false;
@@ -214,9 +248,13 @@ public class LevelSequence : MonoBehaviour
 
     IEnumerator SwitchOnPong()
     {
+        if(PongFTUE)
+        {
+            StartCoroutine(SwitchOnPongFTUE());
+        }
         PongSequenceInt++;
         GameManager.GameMode = 0;
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.1f);
         Ball.Reset();
         if(GabMultSelection1On)
         {
@@ -263,6 +301,16 @@ public class LevelSequence : MonoBehaviour
                     GabMultTypeC();
                 }
         }
+    }
+
+    IEnumerator SwitchOnPongFTUE()
+    {
+        FtuePrompts[3].SetActive(true);
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(4);
+        Time.timeScale = 1.0f;
+        FtuePrompts[3].SetActive(false);
+        PongFTUE = false;
     }
 
     // Good dialogue option
