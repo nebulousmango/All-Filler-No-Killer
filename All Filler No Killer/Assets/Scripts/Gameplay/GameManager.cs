@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
     // GameMode = 2 is when Game is in LevelEnd mode.
     public int GameMode;
 
+    [Header("Points")]
+    [SerializeField] GameObject OppScoreText;
+    [SerializeField] TextMeshPro OppScoreTextTMP;
+    [SerializeField] GameObject GabScoreText;
+
     [Header("Level End")]
     [SerializeField] GameObject LevelEndPanel;
     [SerializeField] TextMeshProUGUI finalOppScoreText;
@@ -62,6 +67,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerGabScored()
     {
+        StartCoroutine(GabScoreIncreaseText());
         PlayerGabScore++;
         ResetPosition();
         ChangeToTextPlayer("" + PlayerGabScore);
@@ -70,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerOppScored()
     {
+        StartCoroutine(OppScoreIncreaseText());
         PlayerOppScore++;
         ResetPosition();
         ChangeToTextOpp("" + PlayerOppScore);
@@ -105,5 +112,43 @@ public class GameManager : MonoBehaviour
         LevelEndPanel.SetActive(true);
         finalGabScoreText.text = ("" + PlayerGabScore);
         finalOppScoreText.text = ("" + PlayerOppScore);
+    }
+
+    IEnumerator GabScoreIncreaseText()
+    {
+        GabScoreText.SetActive(true);
+        yield return new WaitForSeconds(2);
+        GabScoreText.SetActive(false);
+    }
+
+    IEnumerator OppScoreIncreaseText()
+    {
+        OppScoreText.SetActive(true);
+        yield return new WaitForSeconds(2);
+        OppScoreText.SetActive(false);
+    }
+
+    IEnumerator OppScoreIncreaseTextPlusTwo()
+    {
+        OppScoreTextTMP.text = ("+2");
+        OppScoreText.SetActive(true);
+        yield return new WaitForSeconds(2);
+        OppScoreTextTMP.text = ("+1");
+        OppScoreText.SetActive(false);
+    }
+
+    public void TypeAScore()
+    {
+        StartCoroutine(GabScoreIncreaseText());
+    }
+
+    public void TypeBScore()
+    {
+        StartCoroutine(OppScoreIncreaseText());
+    }
+
+    public void TypeCScore()
+    {
+        StartCoroutine(OppScoreIncreaseTextPlusTwo());
     }
 }
