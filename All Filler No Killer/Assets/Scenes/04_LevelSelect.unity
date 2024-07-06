@@ -3251,7 +3251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kid vs Aunt
+  m_text: Kid vs Mama
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5ef6c37694d2634684ed4d71716c7bf, type: 2}
   m_sharedMaterial: {fileID: -6798051241427415521, guid: e5ef6c37694d2634684ed4d71716c7bf, type: 2}
