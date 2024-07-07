@@ -1089,8 +1089,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.669059, y: -1.0863197}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: 4.6753, y: -1.1549}
+  m_SizeDelta: {x: 4.9975, y: 2.2549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291434144
 MonoBehaviour:
@@ -3342,8 +3342,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.669059, y: 1.7936801}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: 4.6872, y: 1.7088}
+  m_SizeDelta: {x: 5.025, y: 2.2479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838735181
 MonoBehaviour:
@@ -3632,8 +3632,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.669059, y: -1.0863197}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: 4.6193, y: -1.1672}
+  m_SizeDelta: {x: 5.0949, y: 2.2274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931710528
 MonoBehaviour:
@@ -4572,8 +4572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.669059, y: 4.64368}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: 4.6574, y: 4.5678}
+  m_SizeDelta: {x: 5.0375, y: 2.1918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301327771
 MonoBehaviour:
@@ -6375,8 +6375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.600651, y: -1.032412}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: -4.6146, y: -1.0739}
+  m_SizeDelta: {x: 5.1353, y: 2.0889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669403619
 MonoBehaviour:
@@ -7244,38 +7244,88 @@ MonoBehaviour:
   DialogueGabMult2: {fileID: 838735181}
   DialogueGabMult3: {fileID: 291434144}
   GabDialogueList:
-  - Hey Harpo!
-  - Have you heard?
-  - They're starting to talk!
-  - The people here, obviously.
+  - Can I go play with Enzo?
   - '[Gab Multiple]'
   - '[Gab Multiple]'
-  - You know me too well.
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - Sure mama, bye!
   OppDialogueList:
-  - Gab? Oh no.
-  - Heard what?
-  - Who is?
-  - Not them too! Leave them be.
-  - I don't like how that sounds.
-  - I hope you're joking.
+  - Have you cleaned your room?
+  - What about your chores?
+  - Hmm. And your homework?
+  - Alright, alright. Have you washed?
+  - What about breakfast?
+  - And when will you be back?
+  - Wait, give this to Enzo's mama.
+  - Fine, never mind. Say hi from me.
+  - Are you cycling to Enzo's?
+  - Be safe and have a nice time!
   GabMultDialogueList:
-  - I think I'll drop in to chat.
-  - Why? It'll be fun!
-  - Whatever you say, Harpo.
-  - Relax, I won't wipe them out.
-  - Don't worry, I'll be good.
-  - Who do you take me for?
+  - Yes, look! It's spotless.
+  - I'll do it after dinner.
+  - What for? I'll just get it messy again.
+  - What chores? I'm on vacation!
+  - I don't want to do them.
+  - I've kind of done them.
+  - I don't have any homework.
+  - Yes mama, I finished all of it.
+  - I'll do it later, I promise.
+  - I'll wash when I'm back.
+  - I'm going to be sweaty again anyway.
+  - I've brushed my teeth and had my wash.
+  - I'm not hungry!
+  - I'll eat at Enzo's house.
+  - I had my sandwich and milk.
+  - When I feel like it.
+  - Whenever we finish playing.
+  - I'll be home by six.
+  - Eggs? Why do I need to carry eggs?
+  - They'll break on the way.
+  - You give them to her.
+  - Ok I will, can I go now?
+  - I'll tell her you'll bring eggs.
+  - I'll tell her if I see her.
+  - Yes I am!
+  - No I'm walking.
+  - I'm taking the tram.
   GabMult1DialogueTypes:
   - A
+  - B
+  - B
+  - B
+  - B
+  - B
+  - B
+  - B
   - B
   GabMult2DialogueTypes:
   - B
   - C
+  - C
+  - C
+  - C
+  - C
+  - C
+  - C
+  - C
   GabMult3DialogueTypes:
   - C
   - A
-  GabMultDialogueInt: 0700000009000000
-  LevelEndInt: 12
+  - A
+  - A
+  - A
+  - A
+  - A
+  - A
+  - A
+  GabMultDialogueInt: 01000000030000000500000007000000090000000b0000000d0000000f00000011000000
+  LevelEndInt: 20
   GabMultipleActive: 0
   GabMultSelection1: {fileID: 508200162}
   GabMultSelection2: {fileID: 944415322}

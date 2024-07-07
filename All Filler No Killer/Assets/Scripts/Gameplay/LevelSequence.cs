@@ -180,7 +180,102 @@ public class LevelSequence : MonoBehaviour
                     }
                 }
 
-                if(Level3)
+                if (Level2)
+                {
+                    if (DialogueSequenceInt == GabMultDialogueInt[0])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[0];
+                        DialogueGabMult2.text = GabMultDialogueList[1];
+                        DialogueGabMult3.text = GabMultDialogueList[2];
+                    }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[1])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[3];
+                        DialogueGabMult2.text = GabMultDialogueList[4];
+                        DialogueGabMult3.text = GabMultDialogueList[5];
+                    }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[2])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[6];
+                        DialogueGabMult2.text = GabMultDialogueList[7];
+                        DialogueGabMult3.text = GabMultDialogueList[8];
+                    }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[3])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[9];
+                        DialogueGabMult2.text = GabMultDialogueList[10];
+                        DialogueGabMult3.text = GabMultDialogueList[11];
+                    }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[4])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[12];
+                        DialogueGabMult2.text = GabMultDialogueList[13];
+                        DialogueGabMult3.text = GabMultDialogueList[14];
+                    }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[5])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[15];
+                        DialogueGabMult2.text = GabMultDialogueList[16];
+                        DialogueGabMult3.text = GabMultDialogueList[17];
+                    }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[6])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[18];
+                        DialogueGabMult2.text = GabMultDialogueList[19];
+                        DialogueGabMult3.text = GabMultDialogueList[20];
+                    }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[7])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[21];
+                        DialogueGabMult2.text = GabMultDialogueList[22];
+                        DialogueGabMult3.text = GabMultDialogueList[23];
+                    }
+
+                    if (DialogueSequenceInt == GabMultDialogueInt[8])
+                    {
+                        StoryManager.b_SwitchOffGabDialogue = true;
+                        SwitchOnGabMultiple();
+                        DialogueGabMult1.text = GabMultDialogueList[24];
+                        DialogueGabMult2.text = GabMultDialogueList[25];
+                        DialogueGabMult3.text = GabMultDialogueList[26];
+                    }
+
+                    if (DialogueSequenceInt % 2 == 1 && DialogueSequenceInt != GabMultDialogueInt[0]
+                    && DialogueSequenceInt != GabMultDialogueInt[1] && DialogueSequenceInt != GabMultDialogueInt[2]
+                    && DialogueSequenceInt != GabMultDialogueInt[3] && DialogueSequenceInt != GabMultDialogueInt[4]
+                    && DialogueSequenceInt != GabMultDialogueInt[5] && DialogueSequenceInt != GabMultDialogueInt[6]
+                    && DialogueSequenceInt != GabMultDialogueInt[7] && DialogueSequenceInt != GabMultDialogueInt[8])
+                    {
+                        StoryManager.b_SwitchOffOppDialogue = true;
+                        StoryManager.b_SwitchOnGabDialogue = true;
+                        DialogueGabSing.text = GabDialogueList[(DialogueSequenceInt + 1) / 2];
+                    }
+                }
+
+                if (Level3)
                 {
                     if (DialogueSequenceInt == GabMultDialogueInt[0])
                     {
@@ -395,7 +490,7 @@ public class LevelSequence : MonoBehaviour
     {
         FtuePrompts[3].SetActive(true);
         Time.timeScale = 0.5f;
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2.5f);
         Time.timeScale = 1.0f;
         FtuePrompts[3].GetComponent<Animator>().SetBool("FtueExit", true);
         PongFTUE = false;

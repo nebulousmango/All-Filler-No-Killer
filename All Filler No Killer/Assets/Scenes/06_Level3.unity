@@ -1089,8 +1089,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.669059, y: -1.0863197}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: 4.6538, y: -1.1777}
+  m_SizeDelta: {x: 5.0455, y: 2.2419}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &291434144
 MonoBehaviour:
@@ -3342,8 +3342,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.669059, y: 1.7936801}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: 4.6529, y: 1.7166}
+  m_SizeDelta: {x: 5.0114, y: 2.211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838735181
 MonoBehaviour:
@@ -3632,8 +3632,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.669059, y: -1.0863197}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: 4.6262, y: -1.1627}
+  m_SizeDelta: {x: 5.0647, y: 2.2784}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931710528
 MonoBehaviour:
@@ -4572,8 +4572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.669059, y: 4.64368}
-  m_SizeDelta: {x: 5.0114, y: 2.4917}
+  m_AnchoredPosition: {x: 4.6864, y: 4.5959}
+  m_SizeDelta: {x: 5.1279, y: 2.2297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301327771
 MonoBehaviour:
@@ -6375,8 +6375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.65, y: -1.074}
-  m_SizeDelta: {x: 4.3402, y: 1.9347}
+  m_AnchoredPosition: {x: -4.611, y: -1.0653}
+  m_SizeDelta: {x: 4.7182, y: 2.1479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669403619
 MonoBehaviour:
@@ -7329,7 +7329,7 @@ MonoBehaviour:
   GabMultSelection1On: 0
   GabMultSelection2On: 0
   GabMultSelection3On: 0
-  ExposedReadingTimer: 13
+  ExposedReadingTimer: 10
   ReadingTimer: 0
   TimerUI: {fileID: 27237413}
   TimerText: {fileID: 430933774}
