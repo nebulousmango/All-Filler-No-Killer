@@ -14,12 +14,7 @@ public class PaddleOpp : MonoBehaviour
     public float timeMoving = 0f;
     public Vector3 direction = Vector3.zero;
 
-    [SerializeField] bool isPlayerMasc;
-    [SerializeField] bool isPlayerFem;
-    private static string[] voiceFemList = { "HmmFem1", "HmmFem2", "HmmFem3", "HmmFem4", "HmmFem5", "HmmFem6" };
-    private static string[] voiceMascList = { "HmmMasc1", "HmmMasc2", "HmmMasc3", "HmmMasc4", "HmmMasc5", "HmmMasc6" };
-    private string playFemVoice;
-    private string playMascVoice;
+    private string playBallSfx = "Tennis_4";
 
     private void Start()
     {
@@ -48,16 +43,7 @@ public class PaddleOpp : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            if (isPlayerMasc)
-            {
-                FindObjectOfType<AudioManager>().PlaySound(playMascVoice);
-                playMascVoice = voiceMascList[Random.Range(0, voiceMascList.Length)];
-            }
-            if (isPlayerFem)
-            {
-                FindObjectOfType<AudioManager>().PlaySound(playFemVoice);
-                playFemVoice = voiceFemList[Random.Range(0, voiceFemList.Length)];
-            }
+            FindObjectOfType<AudioManager>().PlaySound(playBallSfx);
         }
     }
 
