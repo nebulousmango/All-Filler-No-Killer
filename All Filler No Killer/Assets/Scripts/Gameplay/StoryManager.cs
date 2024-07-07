@@ -219,7 +219,7 @@ public class StoryManager : MonoBehaviour
     IEnumerator FirstSceneDialogue()
     {
         animPlaying = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         b_SwitchOnGabDialogue = true;
         animPlaying = false;
     }
