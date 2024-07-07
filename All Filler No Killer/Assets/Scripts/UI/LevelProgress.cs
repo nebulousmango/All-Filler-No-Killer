@@ -16,6 +16,7 @@ public class LevelProgress : MonoBehaviour
         if (CurrentScene == "02_Cutscene1")
         {
             PlayerPrefs.SetInt("LevelsCompletedInt", 0);
+            PlayerPrefs.Save();
         }
     }
 
@@ -36,26 +37,31 @@ public class LevelProgress : MonoBehaviour
         {
             FindObjectOfType<LevelsCompleted>().IsLevelComplete[0] = true;
             PlayerPrefs.SetInt("LevelsCompletedInt", 1);
+            PlayerPrefs.Save();
         }
         if (CurrentScene == "05_Level2")
         {
             FindObjectOfType<LevelsCompleted>().IsLevelComplete[1] = true;
             PlayerPrefs.SetInt("LevelsCompletedInt", 2);
+            PlayerPrefs.Save();
         }
         if (CurrentScene == "06_Level3")
         {
             FindObjectOfType<LevelsCompleted>().IsLevelComplete[2] = true;
             PlayerPrefs.SetInt("LevelsCompletedInt", 3);
+            PlayerPrefs.Save();
         }
         if (CurrentScene == "07_Level4")
         {
             FindObjectOfType<LevelsCompleted>().IsLevelComplete[3] = true;
             PlayerPrefs.SetInt("LevelsCompletedInt", 4);
+            PlayerPrefs.Save();
         }
         if (CurrentScene == "09_Level5")
         {
             FindObjectOfType<LevelsCompleted>().IsLevelComplete[4] = true;
             PlayerPrefs.SetInt("LevelsCompletedInt", 5);
+            PlayerPrefs.Save();
         }
     }
 }

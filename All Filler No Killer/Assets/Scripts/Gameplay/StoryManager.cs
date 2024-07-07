@@ -28,8 +28,9 @@ public class StoryManager : MonoBehaviour
     [SerializeField] Animator animMult2DialogueGab;
     [SerializeField] Animator animMult3DialogueGab;
 
-    [Header("Times")]
+    [Header("Animation")]
     [SerializeField] float animPlayTime;
+    public bool animPlaying;
 
     [Header("Bools for Gab single dialogue")]
     public bool b_SwitchOnGabDialogue;
@@ -67,7 +68,7 @@ public class StoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && LevelSequence.GabMultipleActive == false)
+        if (Input.GetKeyDown(KeyCode.Space) && LevelSequence.GabMultipleActive == false && !animPlaying)
         {
             i++;
             DialogueSequenceUnlocked[i] = true;
@@ -154,37 +155,46 @@ public class StoryManager : MonoBehaviour
 
     IEnumerator StartGabDialogueSingCoroutine()
     {
+        animPlaying = true;
         SingleDialogueGab.SetActive(true);
         yield return new WaitForSeconds(animPlayTime);
         DialogueGabSing.SetActive(true);
+        animPlaying = false;
     }
 
     IEnumerator StartGabDialogueMultCoroutine()
     {
+        animPlaying = true;
         MultipleDialogueGab.SetActive(true);
         yield return new WaitForSeconds(animPlayTime);
         DialogueGabMult1.SetActive(true);
         DialogueGabMult2.SetActive(true);
         DialogueGabMult3.SetActive(true);
+        animPlaying = false;
     }
 
     IEnumerator StartOppDialogueCoroutine()
     {
+        animPlaying = true;
         SingleDialogueOpp.SetActive(true);
         yield return new WaitForSeconds(animPlayTime);
         DialogueOpp.SetActive(true);
+        animPlaying = false;
     }
 
     IEnumerator StopGabDialogueSingCoroutine()
     {
+        animPlaying = true;
         DialogueGabSing.SetActive(false);
         animSingleDialogueGab.SetBool("ExitBubble", true);
         yield return new WaitForSeconds(animPlayTime);
         SingleDialogueGab.SetActive(false);
+        animPlaying = false;
     }
 
     IEnumerator StopGabDialogueMultCoroutine()
     {
+        animPlaying = true;
         DialogueGabMult1.SetActive(false);
         DialogueGabMult2.SetActive(false);
         DialogueGabMult3.SetActive(false);
@@ -193,19 +203,24 @@ public class StoryManager : MonoBehaviour
         animMult3DialogueGab.SetBool("ExitBubble", true);
         yield return new WaitForSeconds(animPlayTime);
         MultipleDialogueGab.SetActive(false);
+        animPlaying = false;
     }
 
     IEnumerator StopOppDialogueCoroutine()
     {
+        animPlaying = true;
         DialogueOpp.SetActive(false);
         animSingleDialogueOpp.SetBool("ExitBubble", true);
         yield return new WaitForSeconds(animPlayTime);
         SingleDialogueOpp.SetActive(false);
+        animPlaying = false;
     }
 
     IEnumerator FirstSceneDialogue()
     {
+        animPlaying = true;
         yield return new WaitForSeconds(1);
         b_SwitchOnGabDialogue = true;
+        animPlaying = false;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelListManager : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class LevelListManager : MonoBehaviour
     public bool[] IsLevelComplete;
     public LevelsCompleted levelsCompleted;
     public int LevelsCompletedInt;
-    
+    public int PlayerPrefsLevelsCompletedInt;
+
     private void Start()
     {
         levelsCompleted = FindObjectOfType<LevelsCompleted>();
@@ -27,7 +29,23 @@ public class LevelListManager : MonoBehaviour
             LevelLockedObject.SetActive(true);
         }
 
-        LevelsCompletedInt = PlayerPrefs.GetInt("LevelsCompletedInt");
+        LevelLockedObjects[0].SetActive(false);
+        LevelUnlockedObjects[0].SetActive(true);
+
+        PlayerPrefsLevelsCompletedInt = PlayerPrefs.GetInt("LevelsCompletedInt");
+
+        if (PlayerPrefsLevelsCompletedInt >= 0)
+        {
+            LevelsCompletedInt = PlayerPrefsLevelsCompletedInt;
+        }
+
+        if (LevelsCompletedInt == 0)
+        {
+            for (int i = 0; i < LevelsCompletedInt + 1; i++)
+            {
+                IsLevelComplete[i] = false;
+            }
+        }
 
         if (LevelsCompletedInt > 0)
         {

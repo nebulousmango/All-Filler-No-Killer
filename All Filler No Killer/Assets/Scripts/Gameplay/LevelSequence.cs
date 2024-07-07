@@ -57,6 +57,7 @@ public class LevelSequence : MonoBehaviour
     [SerializeField] float ReadingTimer;
     [SerializeField] GameObject TimerUI;
     [SerializeField] TMP_Text TimerText;
+    bool InteractedWithMult;
 
     private void Start()
     {
@@ -93,6 +94,7 @@ public class LevelSequence : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && GabMultipleActive == true)
         {
+            InteractedWithMult = true;
             DownArrowInt++;
             if (DownArrowInt == 1)
             {
@@ -378,10 +380,15 @@ public class LevelSequence : MonoBehaviour
                 }
             }
         }
+        if (Input.GetKeyDown(KeyCode.Space) && InteractedWithMult && !PongFTUE)
+        {
+            ReadingTimer = 0;
+        }
     }
 
     void SwitchOnGabMultiple()
     {
+        InteractedWithMult = false;
         ReadingTimer = ExposedReadingTimer;
         GabMultipleActive = true;
         TimerUI.SetActive(true);
@@ -437,7 +444,9 @@ public class LevelSequence : MonoBehaviour
         }
         PongSequenceInt++;
         GameManager.GameMode = 0;
+        Ball.GetComponent<Rigidbody2D>().isKinematic = true;
         yield return new WaitForSeconds(0.1f);
+        Ball.GetComponent<Rigidbody2D>().isKinematic = false;
         Ball.Reset();
         if(GabMultSelection1On)
         {
