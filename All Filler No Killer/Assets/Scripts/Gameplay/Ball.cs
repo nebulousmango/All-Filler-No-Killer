@@ -46,19 +46,19 @@ public class Ball : MonoBehaviour
         rb.velocity = new Vector2(speed * x, speed * y);
     }
 
-    public void BallVersionA()
+    public void BallVersionGood()
     {
         rb.gravityScale = 0;
         speed = 4;
     }
 
-    public void BallVersionB()
+    public void BallVersionBad()
     {
         rb.gravityScale = 0.1f;
         speed = 4.6f;
     }
 
-    public void BallVersionC()
+    public void BallVersionUgly()
     {
         rb.gravityScale = 0;
         speed = 4.5f;

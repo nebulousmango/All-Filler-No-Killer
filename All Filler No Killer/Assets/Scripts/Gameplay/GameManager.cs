@@ -137,17 +137,17 @@ public class GameManager : MonoBehaviour
         OppScoreText.SetActive(false);
     }
 
-    public void TypeAScore()
+    public void ScoreGood()
     {
         StartCoroutine(GabScoreIncreaseText());
     }
 
-    public void TypeBScore()
+    public void ScoreBad()
     {
         StartCoroutine(OppScoreIncreaseText());
     }
 
-    public void TypeCScore()
+    public void ScoreUgly()
     {
         StartCoroutine(OppScoreIncreaseTextPlusTwo());
     }

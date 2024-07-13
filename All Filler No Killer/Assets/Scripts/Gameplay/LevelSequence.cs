@@ -448,49 +448,19 @@ public class LevelSequence : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         Ball.GetComponent<Rigidbody2D>().isKinematic = false;
         Ball.Reset();
-        if(GabMultSelection1On)
+        if(GabMultSelection1On || GabMultSelection2On || GabMultSelection3On)
         {
                 if (GabMult1DialogueTypes[PongSequenceInt-1] == "A")
                 {
-                    GabMultTypeA();
+                    GabMultGood();
                 }
                 if (GabMult1DialogueTypes[PongSequenceInt - 1] == "B")
                 {
-                    GabMultTypeB();
+                    GabMultBad();
                 }
                 if (GabMult1DialogueTypes[PongSequenceInt - 1] == "C")
                 {
-                    GabMultTypeC();
-                }
-        }
-        if (GabMultSelection2On)
-        {
-                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "A")
-                {
-                    GabMultTypeA();
-                }
-                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "B")
-                {
-                    GabMultTypeB();
-                }
-                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "C")
-                {
-                    GabMultTypeC();
-                }
-        }
-        if (GabMultSelection3On)
-        {
-                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "A")
-                {
-                    GabMultTypeA();
-                }
-                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "B")
-                {
-                    GabMultTypeB();
-                }
-                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "C")
-                {
-                    GabMultTypeC();
+                    GabMultUgly();
                 }
         }
     }
@@ -506,31 +476,31 @@ public class LevelSequence : MonoBehaviour
     }
 
     // Good dialogue option
-    void GabMultTypeA()
+    void GabMultGood()
     {
-        Ball.BallVersionA();
+        Ball.BallVersionGood();
         GameManager.PlayerGabScore++;
         GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
-        GameManager.TypeAScore();
+        GameManager.ScoreGood();
     }
 
     // Bad dialogue option
-    void GabMultTypeB()
+    void GabMultBad()
     {
-        Ball.BallVersionB();
+        Ball.BallVersionBad();
         PaddleOpp.speed = 9;
         GameManager.PlayerOppScore++;
         GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
-        GameManager.TypeBScore();
+        GameManager.ScoreBad();
     }
 
     // Ugly dialogue option
-    void GabMultTypeC()
+    void GabMultUgly()
     {
-        Ball.BallVersionC();
-        GameManager.PlayerOppScore = GameManager.PlayerOppScore + 2;
+        Ball.BallVersionUgly();
+        GameManager.PlayerOppScore += 2;
         GameManager.ChangeToTextOpp("" + GameManager.PlayerOppScore);
-        GameManager.TypeCScore();
+        GameManager.ScoreUgly();
     }
 
     void EndLevel()

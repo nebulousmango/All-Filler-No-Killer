@@ -5649,7 +5649,7 @@ MonoBehaviour:
   b_SwitchOffOppDialogue: 0
   b_SwitchOnGabMultDialogue: 0
   b_SwitchOffGabMultDialogue: 0
-  DialogueSequenceUnlocked: 000000000000000000000000
+  DialogueSequenceUnlocked: 
 --- !u!1 &1413825311
 GameObject:
   m_ObjectHideFlags: 0
