@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
         ResetPosition();
         ChangeToTextPlayer("" + PlayerGabScore);
         GameMode = 1;
+        FindObjectOfType<StoryManager>().PlayHmm();
     }
 
     public void PlayerOppScored()
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
         ResetPosition();
         ChangeToTextOpp("" + PlayerOppScore);
         GameMode = 1;
+        FindObjectOfType<StoryManager>().PlayHmm();
     }
 
     private void ResetPosition()

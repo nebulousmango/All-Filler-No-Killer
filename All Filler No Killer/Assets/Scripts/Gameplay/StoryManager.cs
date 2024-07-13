@@ -8,6 +8,9 @@ public class StoryManager : MonoBehaviour
 
     int i = -1;
     LevelSequence LevelSequence;
+    AudioManager AudioManager;
+    private static string[] HmmList = { "Hmm_1", "Hmm_2", "Hmm_3", "Hmm_4", "Hmm_5", "Hmm_6"};
+    private string HmmListString;
 
     [Header("Speech bubble objects")]
     [SerializeField] GameObject SingleDialogueGab;
@@ -64,6 +67,9 @@ public class StoryManager : MonoBehaviour
         DialogueSequenceUnlocked = new bool[dialogueSequenceInt];
 
         LevelSequence = FindObjectOfType<LevelSequence>();
+
+        AudioManager = FindObjectOfType<AudioManager>();
+        HmmListString = HmmList[Random.Range(0, HmmList.Length)];
     }
 
     private void Update()
@@ -159,6 +165,7 @@ public class StoryManager : MonoBehaviour
         SingleDialogueGab.SetActive(true);
         yield return new WaitForSeconds(animPlayTime);
         DialogueGabSing.SetActive(true);
+        PlayHmm();
         animPlaying = false;
     }
 
@@ -179,6 +186,7 @@ public class StoryManager : MonoBehaviour
         SingleDialogueOpp.SetActive(true);
         yield return new WaitForSeconds(animPlayTime);
         DialogueOpp.SetActive(true);
+        PlayHmm();
         animPlaying = false;
     }
 
@@ -222,5 +230,11 @@ public class StoryManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         b_SwitchOnGabDialogue = true;
         animPlaying = false;
+    }
+
+    public void PlayHmm()
+    {
+        AudioManager.PlaySound(HmmListString);
+        HmmListString = HmmList[Random.Range(0, HmmList.Length)];
     }
 }

@@ -14,7 +14,7 @@ public class PaddleOpp : MonoBehaviour
     public float timeMoving = 0f;
     public Vector3 direction = Vector3.zero;
 
-    private string playBallSfx = "Tennis_4";
+    private string playBallSfx = "Tennis_Opp";
 
     private void Start()
     {
@@ -61,7 +61,7 @@ public class PaddleOpp : MonoBehaviour
 
             // Rotate the direction of the ball based on the contact distance
             // to make the gameplay more dynamic and interesting
-            float maxBounceAngle = 10f;
+            float maxBounceAngle = 1f;
             float bounceAngle = (contactDistance.y / paddle.bounds.size.y) * maxBounceAngle;
             ballDirection = Quaternion.AngleAxis(bounceAngle, rotationAxis) * ballDirection;
 

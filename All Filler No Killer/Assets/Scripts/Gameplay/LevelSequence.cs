@@ -11,10 +11,10 @@ public class LevelSequence : MonoBehaviour
     StoryManager StoryManager;
     Ball Ball;
     PaddleOpp PaddleOpp;
-    int DialogueSequenceInt;
-    int DownArrowInt;
-    int PongSequenceInt;
-    bool PongFTUE;
+    private int DialogueSequenceInt;
+    private int DownArrowInt;
+    private int PongSequenceInt;
+    private bool PongFTUE;
 
     [Header("Level bools")]
     [SerializeField] bool Level1;
@@ -69,7 +69,8 @@ public class LevelSequence : MonoBehaviour
         Ball = FindObjectOfType<Ball>();
         PaddleOpp = FindObjectOfType<PaddleOpp>();
         DialogueGabSing.text = GabDialogueList[0];
-        if(Level1)
+
+        if (Level1)
         {
             FtuePrompts[0].SetActive(true);
         }    
@@ -109,6 +110,7 @@ public class LevelSequence : MonoBehaviour
             }
             if (DownArrowInt == 2)
             {
+                FindObjectOfType<AudioManager>().PlaySound("MultButton");
                 GabMultSelection1.SetActive(false);
                 GabMultSelection2.SetActive(true);
                 GabMultSelection3.SetActive(false);
@@ -118,6 +120,7 @@ public class LevelSequence : MonoBehaviour
             }
             if (DownArrowInt == 3)
             {
+                FindObjectOfType<AudioManager>().PlaySound("MultButton");
                 GabMultSelection1.SetActive(false);
                 GabMultSelection2.SetActive(false);
                 GabMultSelection3.SetActive(true);
@@ -127,6 +130,7 @@ public class LevelSequence : MonoBehaviour
             }
             if (DownArrowInt > 3)
             {
+                FindObjectOfType<AudioManager>().PlaySound("MultButton");
                 DownArrowInt = 1;
                 GabMultSelection1.SetActive(true);
                 GabMultSelection2.SetActive(false);
@@ -144,7 +148,6 @@ public class LevelSequence : MonoBehaviour
                 StoryManager.DialogueSequenceUnlocked[DialogueSequenceInt] = false;
 
                 #region LevelPersonalisation
-                // Level 1 multiple Gab dialogue functions
                 if (Level1)
                 {
                     if (DialogueSequenceInt == GabMultDialogueInt[0])
@@ -164,18 +167,11 @@ public class LevelSequence : MonoBehaviour
                         DialogueGabMult2.text = GabMultDialogueList[4];
                         DialogueGabMult3.text = GabMultDialogueList[5];
                     }
-                }
 
-                if (Level1)
-                {
-                    // Checks for an odd dialogueSequenceInt
+                    // Checks for an odd dialogueSequenceInt and play Gab dialogue
                     if (DialogueSequenceInt % 2 == 1 && DialogueSequenceInt != GabMultDialogueInt[0] && DialogueSequenceInt != GabMultDialogueInt[1])
                     {
-                        // Gab dialogue plays
-                        // Switch off Opp's dialogue and switch on Gab's dialogue
-                        StoryManager.b_SwitchOffOppDialogue = true;
-                        StoryManager.b_SwitchOnGabDialogue = true;
-                        DialogueGabSing.text = GabDialogueList[(DialogueSequenceInt + 1) / 2];
+                        SwitchOnGab();
                     }
 
                     if (DialogueSequenceInt == 0)
@@ -267,15 +263,14 @@ public class LevelSequence : MonoBehaviour
                         DialogueGabMult3.text = GabMultDialogueList[26];
                     }
 
+                    // Checks for an odd dialogueSequenceInt and play Gab dialogue
                     if (DialogueSequenceInt % 2 == 1 && DialogueSequenceInt != GabMultDialogueInt[0]
                     && DialogueSequenceInt != GabMultDialogueInt[1] && DialogueSequenceInt != GabMultDialogueInt[2]
                     && DialogueSequenceInt != GabMultDialogueInt[3] && DialogueSequenceInt != GabMultDialogueInt[4]
                     && DialogueSequenceInt != GabMultDialogueInt[5] && DialogueSequenceInt != GabMultDialogueInt[6]
                     && DialogueSequenceInt != GabMultDialogueInt[7] && DialogueSequenceInt != GabMultDialogueInt[8])
                     {
-                        StoryManager.b_SwitchOffOppDialogue = true;
-                        StoryManager.b_SwitchOnGabDialogue = true;
-                        DialogueGabSing.text = GabDialogueList[(DialogueSequenceInt + 1) / 2];
+                        SwitchOnGab();
                     }
                 }
 
@@ -353,15 +348,14 @@ public class LevelSequence : MonoBehaviour
                         DialogueGabMult3.text = GabMultDialogueList[23];
                     }
 
+                    // Checks for an odd dialogueSequenceInt and play Gab dialogue
                     if (DialogueSequenceInt % 2 == 1 && DialogueSequenceInt != GabMultDialogueInt[0] 
                         && DialogueSequenceInt != GabMultDialogueInt[1] && DialogueSequenceInt != GabMultDialogueInt[2]
                          && DialogueSequenceInt != GabMultDialogueInt[3] && DialogueSequenceInt != GabMultDialogueInt[4]
                           && DialogueSequenceInt != GabMultDialogueInt[5] && DialogueSequenceInt != GabMultDialogueInt[6]
                            && DialogueSequenceInt != GabMultDialogueInt[7])
                     {
-                        StoryManager.b_SwitchOffOppDialogue = true;
-                        StoryManager.b_SwitchOnGabDialogue = true;
-                        DialogueGabSing.text = GabDialogueList[(DialogueSequenceInt + 1) / 2];
+                        SwitchOnGab();
                     }
                 }
                 #endregion
@@ -371,14 +365,10 @@ public class LevelSequence : MonoBehaviour
                     EndLevel();
                 }
 
-                // Checks for an even dialogueSequenceInt
+                // Checks for an even dialogueSequenceInt and play Opp dialogue
                 if ((DialogueSequenceInt==0 || DialogueSequenceInt%2==0) && DialogueSequenceInt != LevelEndInt)
                 {
-                    // Opp dialogue plays
-                    // Switch off Gab's dialogue and switch on Opp's dialogue
-                    StoryManager.b_SwitchOffGabDialogue = true;
-                    StoryManager.b_SwitchOnOppDialogue = true;
-                    DialogueOpp.text = OppDialogueList[DialogueSequenceInt/2];
+                    SwitchOnOpp();
                 }
             }
         }
@@ -386,6 +376,24 @@ public class LevelSequence : MonoBehaviour
         {
             ReadingTimer = 0;
         }
+    }
+
+    void SwitchOnGab()
+    {
+        // Gab dialogue plays
+        // Switch off Opp's dialogue and switch on Gab's dialogue
+        StoryManager.b_SwitchOffOppDialogue = true;
+        StoryManager.b_SwitchOnGabDialogue = true;
+        DialogueGabSing.text = GabDialogueList[(DialogueSequenceInt + 1) / 2];
+    }
+
+    void SwitchOnOpp()
+    {
+        // Opp dialogue plays
+        // Switch off Gab's dialogue and switch on Opp's dialogue
+        StoryManager.b_SwitchOffGabDialogue = true;
+        StoryManager.b_SwitchOnOppDialogue = true;
+        DialogueOpp.text = OppDialogueList[DialogueSequenceInt / 2];
     }
 
     void SwitchOnGabMultiple()

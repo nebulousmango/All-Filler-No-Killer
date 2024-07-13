@@ -11,7 +11,7 @@ public class PaddleGab : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     public Vector3 startPosition;
 
-    private string playBallSfx = "Tennis_5";
+    private string playBallSfx = "Tennis_Gab";
     private float movement;
 
     private void Start()
@@ -55,7 +55,7 @@ public class PaddleGab : MonoBehaviour
 
             // Rotate the direction of the ball based on the contact distance
             // to make the gameplay more dynamic and interesting
-            float maxBounceAngle = 10f;
+            float maxBounceAngle = 1f;
             float bounceAngle = (contactDistance.y / paddle.bounds.size.y) * maxBounceAngle;
             ballDirection = Quaternion.AngleAxis(bounceAngle, rotationAxis) * ballDirection;
 
