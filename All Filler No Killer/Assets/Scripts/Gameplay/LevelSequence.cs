@@ -47,6 +47,8 @@ public class LevelSequence : MonoBehaviour
 
     [Header("Gab multiple dialogue")]
     public bool GabMultipleActive;
+    public string GabMultType;
+
     [SerializeField] GameObject GabMultSelection1;
     [SerializeField] GameObject GabMultSelection2;
     [SerializeField] GameObject GabMultSelection3;
@@ -448,7 +450,7 @@ public class LevelSequence : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         Ball.GetComponent<Rigidbody2D>().isKinematic = false;
         Ball.Reset();
-        if(GabMultSelection1On || GabMultSelection2On || GabMultSelection3On)
+        if(GabMultSelection1On)
         {
                 if (GabMult1DialogueTypes[PongSequenceInt-1] == "A")
                 {
@@ -462,6 +464,36 @@ public class LevelSequence : MonoBehaviour
                 {
                     GabMultUgly();
                 }
+        }
+        if (GabMultSelection2On)
+        {
+            if (GabMult2DialogueTypes[PongSequenceInt - 1] == "A")
+            {
+                GabMultGood();
+            }
+            if (GabMult2DialogueTypes[PongSequenceInt - 1] == "B")
+            {
+                GabMultBad();
+            }
+            if (GabMult2DialogueTypes[PongSequenceInt - 1] == "C")
+            {
+                GabMultUgly();
+            }
+        }
+        if (GabMultSelection3On)
+        {
+            if (GabMult3DialogueTypes[PongSequenceInt - 1] == "A")
+            {
+                GabMultGood();
+            }
+            if (GabMult3DialogueTypes[PongSequenceInt - 1] == "B")
+            {
+                GabMultBad();
+            }
+            if (GabMult3DialogueTypes[PongSequenceInt - 1] == "C")
+            {
+                GabMultUgly();
+            }
         }
     }
 
@@ -478,6 +510,7 @@ public class LevelSequence : MonoBehaviour
     // Good dialogue option
     void GabMultGood()
     {
+        GabMultType = "A: Good";
         Ball.BallVersionGood();
         GameManager.PlayerGabScore++;
         GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
@@ -487,6 +520,7 @@ public class LevelSequence : MonoBehaviour
     // Bad dialogue option
     void GabMultBad()
     {
+        GabMultType = "B: Bad";
         Ball.BallVersionBad();
         PaddleOpp.speed = 9;
         GameManager.PlayerOppScore++;
@@ -497,7 +531,9 @@ public class LevelSequence : MonoBehaviour
     // Ugly dialogue option
     void GabMultUgly()
     {
+        GabMultType = "C: Ugly";
         Ball.BallVersionUgly();
+        PaddleOpp.speed = 11;
         GameManager.PlayerOppScore += 2;
         GameManager.ChangeToTextOpp("" + GameManager.PlayerOppScore);
         GameManager.ScoreUgly();

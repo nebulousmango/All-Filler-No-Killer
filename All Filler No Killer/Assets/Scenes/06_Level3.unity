@@ -8024,27 +8024,27 @@ MonoBehaviour:
   - '[Gab Multiple]'
   - See you, prof.
   OppDialogueList:
-  - Morning Paloma!
-  - Yes, what can I do for you?
-  - I noticed you've been behind on work.
+  - Morning, Paloma!
+  - What can I do for you?
+  - I notice you've been behind on work.
   - Can I help in some way?
   - Sure, I'll see what I can do.
-  - Are you having trouble with the work?
+  - I notice you've been behind on work.
   - What's been keeping you busy?
   - Maybe you should ease up a little.
   - But you might fail the sem at this rate.
   - Try and do your best on the paper.
   - I'll see you in class, then.
   GabMultDialogueList:
-  - It's about the term paper.
+  - It's about my term paper.
   - I need some help.
   - I need an extension.
   - I've been distracted this semester.
   - I've been busy with other things.
   - I haven't even started my paper.
-  - Can I get sick leave?
+  - Can you approve my sick leave?
   - Can I take extra classes?
-  - Can I get another week?
+  - Can I get another week for the paper?
   - Yeah, I've missed a few classes.
   - No, no problem! I'll catch up.
   - No, I've just been putting it off.
@@ -8053,7 +8053,7 @@ MonoBehaviour:
   - I can't take this course load.
   - Yeah, I really need a break.
   - I was thinking of dropping a year.
-  - I can't afford to.
+  - I can't afford to ease up.
   - Shit, seriously? What should I do?
   - I think I'll be fine.
   - I guess I might.
@@ -8061,35 +8061,36 @@ MonoBehaviour:
   - My best probably won't be much.
   - I'm working hard on it.
   GabMult1DialogueTypes:
+  - B
+  - B
+  - C
+  - B
+  - C
+  - B
   - A
   - B
-  - B
-  - B
-  - B
-  - B
-  - B
-  - B
   GabMult2DialogueTypes:
+  - A
+  - A
+  - A
+  - A
+  - A
+  - C
   - B
-  - C
-  - C
-  - C
-  - C
-  - C
-  - C
   - C
   GabMult3DialogueTypes:
   - C
+  - C
+  - B
+  - C
+  - B
   - A
-  - A
-  - A
-  - A
-  - A
-  - A
+  - C
   - A
   GabMultDialogueInt: 0300000005000000070000000b0000000d0000000f0000001100000013000000
   LevelEndInt: 22
   GabMultipleActive: 0
+  GabMultType: 
   GabMultSelection1: {fileID: 508200162}
   GabMultSelection2: {fileID: 944415322}
   GabMultSelection3: {fileID: 1844332543}

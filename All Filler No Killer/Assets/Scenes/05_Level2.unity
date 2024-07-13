@@ -8115,20 +8115,20 @@ MonoBehaviour:
   - Wait, give this to Enzo's mama.
   - Fine, never mind. Say hi from me.
   - Are you cycling to Enzo's?
-  - Be safe and have a nice time!
+  - Be safe, sweetie! See you later.
   GabMultDialogueList:
-  - Yes, look! It's spotless.
+  - Yes, it's spotless!
   - I'll do it after dinner.
-  - What for? I'll just get it messy again.
+  - What for? It'll just get messy again.
   - What chores? I'm on vacation!
   - I don't want to do them.
-  - I've kind of done them.
+  - I'm kind of done with them.
   - I don't have any homework.
-  - Yes mama, I finished all of it.
+  - I've already finished all of it.
   - I'll do it later, I promise.
   - I'll wash when I'm back.
   - I'm going to be sweaty again anyway.
-  - I've brushed my teeth and had my wash.
+  - Yeah, I'm all clean.
   - I'm not hungry!
   - I'll eat at Enzo's house.
   - I had my sandwich and milk.
@@ -8139,44 +8139,45 @@ MonoBehaviour:
   - They'll break on the way.
   - You give them to her.
   - Ok I will, can I go now?
-  - I'll tell her you'll bring eggs.
+  - I'll tell her you'll bring the eggs.
   - I'll tell her if I see her.
-  - Yes I am!
-  - No I'm walking.
-  - I'm taking the tram.
+  - Yes, I am!
+  - No, I'm walking. My tyre needs air.
+  - Not today. I'm taking the tram.
   GabMult1DialogueTypes:
   - A
+  - C
+  - C
   - B
-  - B
-  - B
-  - B
-  - B
-  - B
-  - B
-  - B
+  - C
+  - C
+  - C
+  - C
+  - A
   GabMult2DialogueTypes:
   - B
+  - B
+  - A
   - C
-  - C
-  - C
-  - C
-  - C
-  - C
-  - C
+  - B
+  - B
+  - B
+  - A
   - C
   GabMult3DialogueTypes:
   - C
   - A
+  - B
   - A
   - A
   - A
   - A
-  - A
-  - A
-  - A
+  - B
+  - B
   GabMultDialogueInt: 01000000030000000500000007000000090000000b0000000d0000000f00000011000000
   LevelEndInt: 20
   GabMultipleActive: 0
+  GabMultType: 
   GabMultSelection1: {fileID: 508200162}
   GabMultSelection2: {fileID: 944415322}
   GabMultSelection3: {fileID: 1844332543}

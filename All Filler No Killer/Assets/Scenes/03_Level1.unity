@@ -688,8 +688,6 @@ MonoBehaviour:
   speed: 7
   rb: {fileID: 93689128}
   startPosition: {x: 0, y: 0, z: 0}
-  isPlayerMasc: 1
-  isPlayerFem: 0
 --- !u!50 &93689128
 Rigidbody2D:
   serializedVersion: 4
@@ -5499,6 +5497,7 @@ MonoBehaviour:
   animMult2DialogueGab: {fileID: 774179207}
   animMult3DialogueGab: {fileID: 1926170033}
   animPlayTime: 0.8
+  animPlaying: 0
   b_SwitchOnGabDialogue: 0
   b_SwitchOffGabDialogue: 0
   b_SwitchOnOppDialogue: 0
@@ -5896,8 +5895,6 @@ MonoBehaviour:
   isMoving: 0
   timeMoving: 0
   direction: {x: 0, y: 0, z: 0}
-  isPlayerMasc: 1
-  isPlayerFem: 0
 --- !u!1 &1460898128
 GameObject:
   m_ObjectHideFlags: 0
@@ -7743,17 +7740,18 @@ MonoBehaviour:
   - Don't worry, I'll be good.
   - Who do you take me for?
   GabMult1DialogueTypes:
-  - A
-  - B
+  - C
+  - C
   GabMult2DialogueTypes:
   - B
-  - C
-  GabMult3DialogueTypes:
-  - C
   - A
+  GabMult3DialogueTypes:
+  - A
+  - B
   GabMultDialogueInt: 0700000009000000
   LevelEndInt: 12
   GabMultipleActive: 0
+  GabMultType: 
   GabMultSelection1: {fileID: 508200162}
   GabMultSelection2: {fileID: 944415322}
   GabMultSelection3: {fileID: 1844332543}
