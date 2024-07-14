@@ -455,7 +455,7 @@ public class LevelSequence : MonoBehaviour
         Ball.GetComponent<Rigidbody2D>().isKinematic = true;
         PongSequenceInt++;
         GameManager.GameMode = 0;
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.5f);
         Ball.Reset();
         Ball.GetComponent<Rigidbody2D>().isKinematic = false;
         if (GabMultSelection1On)

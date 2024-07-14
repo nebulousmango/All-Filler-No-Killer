@@ -36,7 +36,7 @@ public class PaddleGab : MonoBehaviour
             PaddleOpp.speed = 13;
             speed = 12;
         }
-        if (hitInt == 11)
+        if (hitInt == 10)
         {
             Ball.speed = 8f;
             PaddleOpp.speed = 15;
