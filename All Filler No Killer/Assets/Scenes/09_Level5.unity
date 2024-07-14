@@ -882,7 +882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111194135}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.32, y: 1, z: 0}
+  m_LocalPosition: {x: -0.36, y: 1, z: 0}
   m_LocalScale: {x: 1.118582, y: 1.118582, z: 1.118582}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3030,7 +3030,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 95609b5e9e7ef77458100ff4eca41332, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6067a8bf9fb20254bad762df6f77f287, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3172,7 +3172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690273348}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0.36, y: 1.25, z: 0}
   m_LocalScale: {x: 1.1185815, y: 1.1185815, z: 1.1185815}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8018,39 +8018,19 @@ MonoBehaviour:
   DialogueGabMult2: {fileID: 838735181}
   DialogueGabMult3: {fileID: 291434144}
   GabDialogueList:
-  - Hey Harpo!
-  - Have you heard?
-  - They're starting to talk!
-  - The people here, obviously.
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - You know me too well.
+  - Coming soon!
+  - Stop doing that.
   OppDialogueList:
-  - Gab? Oh no.
-  - Heard what?
-  - Who is?
-  - Not them too! Leave them be.
-  - I don't like how that sounds.
-  - I hope you're joking.
-  GabMultDialogueList:
-  - I think I'll drop in to chat.
-  - Why? It'll be fun!
-  - Whatever you say, Harpo.
-  - Relax, I won't wipe them out.
-  - Don't worry, I'll be good.
-  - Who do you take me for?
-  GabMult1DialogueTypes:
-  - A
-  - B
-  GabMult2DialogueTypes:
-  - B
-  - C
-  GabMult3DialogueTypes:
-  - C
-  - A
-  GabMultDialogueInt: 0700000009000000
-  LevelEndInt: 12
+  - I said, coming soon!
+  - Ok, enough!
+  GabMultDialogueList: []
+  GabMult1DialogueTypes: []
+  GabMult2DialogueTypes: []
+  GabMult3DialogueTypes: []
+  GabMultDialogueInt: 
+  LevelEndInt: 4
   GabMultipleActive: 0
+  GabMultType: 
   GabMultSelection1: {fileID: 508200162}
   GabMultSelection2: {fileID: 944415322}
   GabMultSelection3: {fileID: 1844332543}
