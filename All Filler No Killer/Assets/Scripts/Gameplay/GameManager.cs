@@ -43,12 +43,17 @@ public class GameManager : MonoBehaviour
     public bool LevelOver = false;
     public int PlayerOppScore;
     public int PlayerGabScore;
+    PaddleOpp PaddleOpp;
+    PaddleGab PaddleGab;
 
     private void Start()
     {
         LevelEndPanel.SetActive(false);
         LevelOver = false;
         GameMode = 1;
+
+        PaddleOpp = FindObjectOfType<PaddleOpp>();
+        PaddleGab = FindObjectOfType<PaddleGab>();
     }
 
     private void Update()
@@ -88,6 +93,7 @@ public class GameManager : MonoBehaviour
     private void ResetPosition()
     {
         ball.GetComponent<Ball>().Reset();
+        PaddleGab.Reset();
     }
 
     public void ChangeToTextOpp(string text)

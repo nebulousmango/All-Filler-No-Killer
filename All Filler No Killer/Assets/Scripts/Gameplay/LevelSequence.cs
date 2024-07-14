@@ -448,17 +448,17 @@ public class LevelSequence : MonoBehaviour
 
     IEnumerator SwitchOnPong()
     {
-        if(PongFTUE)
+        if (PongFTUE)
         {
             StartCoroutine(SwitchOnPongFTUE());
         }
+        Ball.GetComponent<Rigidbody2D>().isKinematic = true;
         PongSequenceInt++;
         GameManager.GameMode = 0;
-        Ball.GetComponent<Rigidbody2D>().isKinematic = true;
-        yield return new WaitForSeconds(0.1f);
-        Ball.GetComponent<Rigidbody2D>().isKinematic = false;
+        yield return new WaitForSeconds(0.8f);
         Ball.Reset();
-        if(GabMultSelection1On)
+        Ball.GetComponent<Rigidbody2D>().isKinematic = false;
+        if (GabMultSelection1On)
         {
                 if (GabMult1DialogueTypes[PongSequenceInt-1] == "A")
                 {

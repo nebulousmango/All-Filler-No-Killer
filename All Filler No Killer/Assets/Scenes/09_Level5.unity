@@ -684,9 +684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338c892d8dacb6649b37d5a4c1b2164e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerOpp: 0
-  speed: 7
-  rb: {fileID: 93689128}
+  ExposedSpeed: 7
+  GabRigidbody: {fileID: 93689128}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &93689128
 Rigidbody2D:

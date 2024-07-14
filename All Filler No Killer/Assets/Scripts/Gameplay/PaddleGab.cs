@@ -6,30 +6,42 @@ public class PaddleGab : MonoBehaviour
 {
     // Attached to Player_Gab object in Level scenes.
 
-    [SerializeField] bool isPlayerOpp;
-    [SerializeField] float speed;
-    [SerializeField] Rigidbody2D rb;
+    [SerializeField] float ExposedSpeed = 7;
+    [SerializeField] Rigidbody2D GabRigidbody;
+    public float speed;
     public Vector3 startPosition;
+    public int hitInt;
 
     private string playBallSfx = "Tennis_Gab";
     private float movement;
+    Ball Ball;
+    PaddleOpp PaddleOpp;
 
     private void Start()
     {
+        speed = ExposedSpeed;
         startPosition = transform.position;
+        hitInt = 0;
+        Ball = FindObjectOfType<Ball>();
+        PaddleOpp = FindObjectOfType<PaddleOpp>();
     }
 
     private void Update()
     {
-        if(isPlayerOpp)
+        movement = Input.GetAxisRaw("VerticalGab");
+        GabRigidbody.velocity = new Vector2(GabRigidbody.velocity.x, movement * speed);
+        if(hitInt == 5)
         {
-            movement = Input.GetAxisRaw("VerticalOpp");
+            Ball.speed = 5f;
+            PaddleOpp.speed = 13;
+            speed = 12;
         }
-        else
+        if (hitInt == 11)
         {
-            movement = Input.GetAxisRaw("VerticalGab");
+            Ball.speed = 8f;
+            PaddleOpp.speed = 15;
+            speed = 14;
         }
-        rb.velocity = new Vector2(rb.velocity.x, movement * speed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,6 +49,7 @@ public class PaddleGab : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             FindObjectOfType<AudioManager>().PlaySound(playBallSfx);
+            hitInt++;
         }
     }
 
@@ -66,7 +79,10 @@ public class PaddleGab : MonoBehaviour
 
     public void Reset()
     {
-        rb.velocity = Vector2.zero;
-        transform.position = startPosition;
+        hitInt = 0;
+        GabRigidbody.velocity = Vector2.zero;
+        speed = ExposedSpeed;
+        Ball.speed = 4;
+        PaddleOpp.speed = 8;
     }
 }

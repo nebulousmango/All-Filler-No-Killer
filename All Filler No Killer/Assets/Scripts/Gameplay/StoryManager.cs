@@ -7,6 +7,7 @@ public class StoryManager : MonoBehaviour
     // Attached to GameManager object in Level scenes.
 
     int i = -1;
+    GameManager GameManager;
     LevelSequence LevelSequence;
     AudioManager AudioManager;
     private static string[] HmmList = { "Hmm_1", "Hmm_2", "Hmm_3", "Hmm_4", "Hmm_5", "Hmm_6"};
@@ -67,6 +68,7 @@ public class StoryManager : MonoBehaviour
         DialogueSequenceUnlocked = new bool[dialogueSequenceInt];
 
         LevelSequence = FindObjectOfType<LevelSequence>();
+        GameManager = FindObjectOfType<GameManager>();
 
         AudioManager = FindObjectOfType<AudioManager>();
         HmmListString = HmmList[Random.Range(0, HmmList.Length)];
@@ -74,7 +76,7 @@ public class StoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && LevelSequence.GabMultipleActive == false && !animPlaying)
+        if (Input.GetKeyDown(KeyCode.Space) && LevelSequence.GabMultipleActive == false && !animPlaying && GameManager.GameMode == 1)
         {
             i++;
             DialogueSequenceUnlocked[i] = true;

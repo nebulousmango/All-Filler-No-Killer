@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
 {
     // Attached to Ball object in Level scenes.
 
-    [SerializeField] float speed;
+    [SerializeField] public float speed;
     [SerializeField] Rigidbody2D rb;
     public Vector3 startPosition;
 
@@ -22,7 +22,9 @@ public class Ball : MonoBehaviour
         speed = 4;
         rb.velocity = Vector2.zero;
         transform.position = startPosition;
-        StartCoroutine(ResetBallCoroutine());
+        float x = Random.Range(0, 2) == 0 ? -1 : 1;
+        float y = Random.Range(0, 2) == 0 ? -1 : 1;
+        rb.velocity = new Vector2(speed * x, speed * y);
     }
 
     public void OnHold()
@@ -33,14 +35,6 @@ public class Ball : MonoBehaviour
 
     private void Launch()
     {
-        float x = Random.Range(0, 2) == 0 ? -1 : 1;
-        float y = Random.Range(0, 2) == 0 ? -1 : 1;
-        rb.velocity = new Vector2(speed * x, speed * y);
-    }
-
-    private IEnumerator ResetBallCoroutine()
-    {
-        yield return new WaitForSeconds(1);
         float x = Random.Range(0, 2) == 0 ? -1 : 1;
         float y = Random.Range(0, 2) == 0 ? -1 : 1;
         rb.velocity = new Vector2(speed * x, speed * y);

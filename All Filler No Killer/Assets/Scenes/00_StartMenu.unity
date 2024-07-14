@@ -768,6 +768,12 @@ MonoBehaviour:
     F_Volume: 1
     B_PlayOnAwake: 0
     B_Loop: 0
+  - AudioSource: {fileID: 0}
+    S_Name: LevelEnd
+    AudioClip: {fileID: 8300000, guid: aa26d79bafcdad94b8054dfae4c4a63b, type: 3}
+    F_Volume: 1
+    B_PlayOnAwake: 0
+    B_Loop: 0
 --- !u!4 &1265707654
 Transform:
   m_ObjectHideFlags: 0
