@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1446951353335856602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 445724597909829772}
+  - component: {fileID: 2063309176898579594}
+  m_Layer: 0
+  m_Name: LevelSequence_4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &445724597909829772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446951353335856602}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2063309176898579594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446951353335856602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6290f7f78d78e45a5fe4e4af01429b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level1: 0
+  Level2: 0
+  Level3: 0
+  Level4: 1
+  Level5: 0
+  FtuePrompts: []
+  DialogueGabSing: {fileID: 0}
+  DialogueOpp: {fileID: 0}
+  DialogueGabMult1: {fileID: 0}
+  DialogueGabMult2: {fileID: 0}
+  DialogueGabMult3: {fileID: 0}
+  GabDialogueList:
+  - Hi, I'm here for the interview.
+  - Thanks.
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - Cool. Thanks for your time!
+  OppDialogueList:
+  - Paloma, is it? Take a seat.
+  - Do you have a copy of your resume?
+  - Now let's see. You just graduated?
+  - Do you have any work experience?
+  - How about during college?
+  - Why do you want this job?
+  - What career do you see for yourself?
+  - Umm, ok. Why would you be a good fit?
+  - Great. What are your weaknesses?
+  - Alright, thanks. We'll be in touch.
+  GabMultDialogueList:
+  - Yes, here it is. Printed in colour.
+  - It's in my application.
+  - I emailed you a copy.
+  - Yeah, this summer.
+  - Yeah, I'm looking for my first job.
+  - Yes, a few months ago.
+  - No, I just graduated. I was studying.
+  - No, unfortunately. Too busy studying.
+  - Yeah, I've interned a few times.
+  - I had a part-time job, nothing major.
+  - I was a student representative.
+  - I worked as a TA.
+  - It would help me get where I want.
+  - I've got bills to pay.
+  - It's a great opportunity.
+  - I haven't thought that far ahead.
+  - A long and illustrious one, hopefully!
+  - Let me get back to you on that.
+  - I'm a good team player.
+  - I'm a hard worker.
+  - I've got a good work ethic.
+  - Why would I tell you that?
+  - I'd say I'm too much of a perfectionist.
+  - I don't have any weaknesses.
+  GabMult1DialogueTypes:
+  - A
+  - A
+  - B
+  - C
+  - B
+  - C
+  - B
+  - C
+  GabMult2DialogueTypes:
+  - C
+  - B
+  - C
+  - B
+  - C
+  - A
+  - A
+  - A
+  GabMult3DialogueTypes:
+  - B
+  - C
+  - A
+  - A
+  - A
+  - B
+  - C
+  - B
+  GabMultDialogueInt: 030000000500000007000000090000000b0000000d0000000f00000011000000
+  LevelEndInt: 20
+  GabMultipleActive: 0
+  GabMultType: 
+  GabMultSelection1: {fileID: 0}
+  GabMultSelection2: {fileID: 0}
+  GabMultSelection3: {fileID: 0}
+  GabMultSelection1On: 0
+  GabMultSelection2On: 0
+  GabMultSelection3On: 0
+  ExposedReadingTimer: 10
+  ReadingTimer: 0
+  TimerUI: {fileID: 0}
+  TimerText: {fileID: 0}

@@ -686,7 +686,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExposedSpeed: 7
   GabRigidbody: {fileID: 93689128}
+  speed: 0
   startPosition: {x: 0, y: 0, z: 0}
+  hitInt: 0
 --- !u!50 &93689128
 Rigidbody2D:
   serializedVersion: 4
@@ -8037,156 +8039,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1878284053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1878284054}
-  - component: {fileID: 1878284055}
-  m_Layer: 0
-  m_Name: LevelSequence
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1878284054
+--- !u!4 &1878284054 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+  m_PrefabInstance: {fileID: 8482891139570566411}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878284053}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1960945111}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1878284055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878284053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6290f7f78d78e45a5fe4e4af01429b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Level1: 0
-  Level2: 1
-  Level3: 0
-  Level4: 0
-  Level5: 0
-  FtuePrompts: []
-  DialogueGabSing: {fileID: 931710528}
-  DialogueOpp: {fileID: 1669403619}
-  DialogueGabMult1: {fileID: 1301327771}
-  DialogueGabMult2: {fileID: 838735181}
-  DialogueGabMult3: {fileID: 291434144}
-  GabDialogueList:
-  - Can I go play with Enzo?
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - Sure mama, bye!
-  OppDialogueList:
-  - Have you cleaned your room?
-  - What about your chores?
-  - Hmm. And your homework?
-  - Alright, alright. Have you washed?
-  - What about breakfast?
-  - And when will you be back?
-  - Wait, give this to Enzo's mama.
-  - Fine, never mind. Say hi from me.
-  - Are you cycling to Enzo's?
-  - Be safe, sweetie! See you later.
-  GabMultDialogueList:
-  - Yes, it's spotless!
-  - I'll do it after dinner.
-  - What for? It'll just get messy again.
-  - What chores? I'm on vacation!
-  - I don't want to do them.
-  - I'm kind of done with them.
-  - I don't have any homework.
-  - I've already finished all of it.
-  - I'll do it later, I promise.
-  - I'll wash when I'm back.
-  - I'm going to be sweaty again anyway.
-  - Yeah, I'm all clean.
-  - I'm not hungry!
-  - I'll eat at Enzo's house.
-  - I had my sandwich and milk.
-  - When I feel like it.
-  - Whenever we finish playing.
-  - I'll be home by six.
-  - Eggs? Why do I need to carry eggs?
-  - They'll break on the way.
-  - You give them to her.
-  - Ok I will, can I go now?
-  - I'll tell her you'll bring the eggs.
-  - I'll tell her if I see her.
-  - Yes, I am!
-  - No, I'm walking. My tyre needs air.
-  - Not today. I'm taking the tram.
-  GabMult1DialogueTypes:
-  - A
-  - C
-  - C
-  - B
-  - C
-  - C
-  - C
-  - C
-  - A
-  GabMult2DialogueTypes:
-  - B
-  - B
-  - A
-  - C
-  - B
-  - B
-  - B
-  - A
-  - C
-  GabMult3DialogueTypes:
-  - C
-  - A
-  - B
-  - A
-  - A
-  - A
-  - A
-  - B
-  - B
-  GabMultDialogueInt: 01000000030000000500000007000000090000000b0000000d0000000f00000011000000
-  LevelEndInt: 20
-  GabMultipleActive: 0
-  GabMultType: 
-  GabMultSelection1: {fileID: 508200162}
-  GabMultSelection2: {fileID: 944415322}
-  GabMultSelection3: {fileID: 1844332543}
-  GabMultSelection1On: 0
-  GabMultSelection2On: 0
-  GabMultSelection3On: 0
-  ExposedReadingTimer: 10
-  ReadingTimer: 0
-  TimerUI: {fileID: 27237413}
-  TimerText: {fileID: 430933774}
 --- !u!1 &1899269345
 GameObject:
   m_ObjectHideFlags: 0
@@ -8837,3 +8694,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093252362}
   m_CullTransparentMesh: 1
+--- !u!1001 &8482891139570566411
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1960945111}
+    m_Modifications:
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: TimerUI
+      value: 
+      objectReference: {fileID: 27237413}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: TimerText
+      value: 
+      objectReference: {fileID: 430933774}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: DialogueOpp
+      value: 
+      objectReference: {fileID: 1669403619}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: DialogueGabSing
+      value: 
+      objectReference: {fileID: 931710528}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: DialogueGabMult1
+      value: 
+      objectReference: {fileID: 1301327771}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: DialogueGabMult2
+      value: 
+      objectReference: {fileID: 838735181}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: DialogueGabMult3
+      value: 
+      objectReference: {fileID: 291434144}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: GabMultSelection1
+      value: 
+      objectReference: {fileID: 508200162}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: GabMultSelection2
+      value: 
+      objectReference: {fileID: 944415322}
+    - target: {fileID: 3698706173039815393, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: GabMultSelection3
+      value: 
+      objectReference: {fileID: 1844332543}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502438107542061103, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028295179901288220, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}
+      propertyPath: m_Name
+      value: LevelSequence
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20beab4f9d3658d4da9ce7b647533230, type: 3}

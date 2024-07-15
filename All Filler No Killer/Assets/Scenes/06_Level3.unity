@@ -686,7 +686,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExposedSpeed: 7
   GabRigidbody: {fileID: 93689128}
+  speed: 0
   startPosition: {x: 0, y: 0, z: 0}
+  hitInt: 0
 --- !u!50 &93689128
 Rigidbody2D:
   serializedVersion: 4
@@ -7954,152 +7956,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1878284053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1878284054}
-  - component: {fileID: 1878284055}
-  m_Layer: 0
-  m_Name: LevelSequence
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1878284054
+--- !u!4 &1878284054 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+  m_PrefabInstance: {fileID: 1524027177734504656}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878284053}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1960945111}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1878284055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1878284053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be6290f7f78d78e45a5fe4e4af01429b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Level1: 0
-  Level2: 0
-  Level3: 1
-  Level4: 0
-  Level5: 0
-  FtuePrompts: []
-  DialogueGabSing: {fileID: 931710528}
-  DialogueOpp: {fileID: 1669403619}
-  DialogueGabMult1: {fileID: 1301327771}
-  DialogueGabMult2: {fileID: 838735181}
-  DialogueGabMult3: {fileID: 291434144}
-  GabDialogueList:
-  - Hi prof, morning.
-  - Do you have a minute?
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - Thanks prof.
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - '[Gab Multiple]'
-  - See you, prof.
-  OppDialogueList:
-  - Morning, Paloma!
-  - What can I do for you?
-  - I notice you've been behind on work.
-  - Can I help in some way?
-  - Sure, I'll see what I can do.
-  - I notice you've been behind on work.
-  - What's been keeping you busy?
-  - Maybe you should ease up a little.
-  - But you might fail the sem at this rate.
-  - Try and do your best on the paper.
-  - I'll see you in class, then.
-  GabMultDialogueList:
-  - It's about my term paper.
-  - I need some help.
-  - I need an extension.
-  - I've been distracted this semester.
-  - I've been busy with other things.
-  - I haven't even started my paper.
-  - Can you approve my sick leave?
-  - Can I take extra classes?
-  - Can I get another week for the paper?
-  - Yeah, I've missed a few classes.
-  - No, no problem! I'll catch up.
-  - No, I've just been putting it off.
-  - Nothing important, just this and that.
-  - I work evening shifts after class.
-  - I can't take this course load.
-  - Yeah, I really need a break.
-  - I was thinking of dropping a year.
-  - I can't afford to ease up.
-  - Shit, seriously? What should I do?
-  - I think I'll be fine.
-  - I guess I might.
-  - I'll do what I can!
-  - My best probably won't be much.
-  - I'm working hard on it.
-  GabMult1DialogueTypes:
-  - B
-  - B
-  - C
-  - B
-  - C
-  - B
-  - A
-  - B
-  GabMult2DialogueTypes:
-  - A
-  - A
-  - A
-  - A
-  - A
-  - C
-  - B
-  - C
-  GabMult3DialogueTypes:
-  - C
-  - C
-  - B
-  - C
-  - B
-  - A
-  - C
-  - A
-  GabMultDialogueInt: 0300000005000000070000000b0000000d0000000f0000001100000013000000
-  LevelEndInt: 22
-  GabMultipleActive: 0
-  GabMultType: 
-  GabMultSelection1: {fileID: 508200162}
-  GabMultSelection2: {fileID: 944415322}
-  GabMultSelection3: {fileID: 1844332543}
-  GabMultSelection1On: 0
-  GabMultSelection2On: 0
-  GabMultSelection3On: 0
-  ExposedReadingTimer: 10
-  ReadingTimer: 0
-  TimerUI: {fileID: 27237413}
-  TimerText: {fileID: 430933774}
 --- !u!1 &1899269345
 GameObject:
   m_ObjectHideFlags: 0
@@ -8850,3 +8711,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093252362}
   m_CullTransparentMesh: 1
+--- !u!1001 &1524027177734504656
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1960945111}
+    m_Modifications:
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: TimerUI
+      value: 
+      objectReference: {fileID: 27237413}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: TimerText
+      value: 
+      objectReference: {fileID: 430933774}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: DialogueOpp
+      value: 
+      objectReference: {fileID: 1669403619}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: DialogueGabSing
+      value: 
+      objectReference: {fileID: 931710528}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: DialogueGabMult1
+      value: 
+      objectReference: {fileID: 1301327771}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: DialogueGabMult2
+      value: 
+      objectReference: {fileID: 838735181}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: DialogueGabMult3
+      value: 
+      objectReference: {fileID: 291434144}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: GabMultSelection1
+      value: 
+      objectReference: {fileID: 508200162}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: GabMultSelection2
+      value: 
+      objectReference: {fileID: 944415322}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: GabMultSelection3
+      value: 
+      objectReference: {fileID: 1844332543}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2583046920679516459, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238550629378252805, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: m_Name
+      value: LevelSequence
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}

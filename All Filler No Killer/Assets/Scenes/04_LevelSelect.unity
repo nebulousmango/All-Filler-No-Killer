@@ -2351,6 +2351,8 @@ MonoBehaviour:
   - {fileID: 857718777}
   IsLevelComplete: 
   levelsCompleted: {fileID: 0}
+  LevelsCompletedInt: 0
+  PlayerPrefsLevelsCompletedInt: 0
 --- !u!1 &934695185
 GameObject:
   m_ObjectHideFlags: 0
@@ -2813,7 +2815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Translator vs Delegate
+  m_text: Actor vs Actor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5ef6c37694d2634684ed4d71716c7bf, type: 2}
   m_sharedMaterial: {fileID: -6798051241427415521, guid: e5ef6c37694d2634684ed4d71716c7bf, type: 2}
@@ -4632,7 +4634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Summit
+  m_text: The Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: efadefce8f28bc24199706c07746797f, type: 2}
   m_sharedMaterial: {fileID: 2718421472540437066, guid: efadefce8f28bc24199706c07746797f, type: 2}

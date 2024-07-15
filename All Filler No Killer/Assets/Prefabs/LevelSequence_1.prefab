@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5141562056277598221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4861819651572132334}
+  - component: {fileID: 8084528646724164081}
+  m_Layer: 0
+  m_Name: LevelSequence_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4861819651572132334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5141562056277598221}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8084528646724164081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5141562056277598221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6290f7f78d78e45a5fe4e4af01429b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level1: 1
+  Level2: 0
+  Level3: 0
+  Level4: 0
+  Level5: 0
+  FtuePrompts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  DialogueGabSing: {fileID: 0}
+  DialogueOpp: {fileID: 0}
+  DialogueGabMult1: {fileID: 0}
+  DialogueGabMult2: {fileID: 0}
+  DialogueGabMult3: {fileID: 0}
+  GabDialogueList:
+  - Hey Harpo!
+  - Have you heard?
+  - They're starting to talk!
+  - The people here, obviously.
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - You know me too well.
+  OppDialogueList:
+  - Gab? Oh no.
+  - Heard what?
+  - Who is?
+  - Not them too! Leave them be.
+  - I don't like how that sounds.
+  - I hope you're joking.
+  GabMultDialogueList:
+  - I think I'll drop in to chat.
+  - Why? It'll be fun!
+  - Whatever you say, Harpo.
+  - Relax, I won't wipe them out.
+  - Don't worry, I'll be good.
+  - Who do you take me for?
+  GabMult1DialogueTypes:
+  - C
+  - C
+  GabMult2DialogueTypes:
+  - B
+  - A
+  GabMult3DialogueTypes:
+  - A
+  - B
+  GabMultDialogueInt: 0700000009000000
+  LevelEndInt: 12
+  GabMultipleActive: 0
+  GabMultType: 
+  GabMultSelection1: {fileID: 0}
+  GabMultSelection2: {fileID: 0}
+  GabMultSelection3: {fileID: 0}
+  GabMultSelection1On: 0
+  GabMultSelection2On: 0
+  GabMultSelection3On: 0
+  ExposedReadingTimer: 10
+  ReadingTimer: 0
+  TimerUI: {fileID: 0}
+  TimerText: {fileID: 0}

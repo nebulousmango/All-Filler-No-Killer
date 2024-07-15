@@ -9,14 +9,18 @@ public class LevelProgress : MonoBehaviour
 
     public string NextScene;
     private string CurrentScene;
+    LevelsCompleted LevelsCompleted;
+
     private void Start()
     {
+        LevelsCompleted = FindObjectOfType<LevelsCompleted>();
         Scene currentScene = SceneManager.GetActiveScene();
         CurrentScene = currentScene.name;
         if (CurrentScene == "02_Cutscene1")
         {
             PlayerPrefs.SetInt("LevelsCompletedInt", 0);
             PlayerPrefs.Save();
+            LevelsCompleted.SetAllIncomplete();
         }
     }
 

@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6238550629378252805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2583046920679516459}
+  - component: {fileID: 783159164181923523}
+  m_Layer: 0
+  m_Name: LevelSequence_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2583046920679516459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238550629378252805}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &783159164181923523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238550629378252805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6290f7f78d78e45a5fe4e4af01429b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level1: 0
+  Level2: 0
+  Level3: 1
+  Level4: 0
+  Level5: 0
+  FtuePrompts: []
+  DialogueGabSing: {fileID: 0}
+  DialogueOpp: {fileID: 0}
+  DialogueGabMult1: {fileID: 0}
+  DialogueGabMult2: {fileID: 0}
+  DialogueGabMult3: {fileID: 0}
+  GabDialogueList:
+  - Hi prof, morning.
+  - Do you have a minute?
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - Thanks prof.
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - '[Gab Multiple]'
+  - See you, prof.
+  OppDialogueList:
+  - Morning, Paloma!
+  - What can I do for you?
+  - I notice you've been behind on work.
+  - Can I help in some way?
+  - Sure, I'll see what I can do.
+  - I notice you've been behind on work.
+  - What's been keeping you busy?
+  - Maybe you should ease up a little.
+  - But you might fail the sem at this rate.
+  - Try and do your best on the paper.
+  - I'll see you in class, then.
+  GabMultDialogueList:
+  - It's about my term paper.
+  - I need some help.
+  - I need an extension.
+  - I've been distracted this semester.
+  - I've been busy with other things.
+  - I haven't even started my paper.
+  - Can you approve my sick leave?
+  - Can I take extra classes?
+  - Can I get another week for the paper?
+  - Yeah, I've missed a few classes.
+  - No, no problem! I'll catch up.
+  - No, I've just been putting it off.
+  - Nothing important, just this and that.
+  - I work evening shifts after class.
+  - I can't take this course load.
+  - Yeah, I really need a break.
+  - I was thinking of dropping a year.
+  - I can't afford to ease up.
+  - Shit, seriously? What should I do?
+  - I think I'll be fine.
+  - I guess I might.
+  - I'll do what I can!
+  - My best probably won't be much.
+  - I'm working hard on it.
+  GabMult1DialogueTypes:
+  - B
+  - B
+  - C
+  - B
+  - C
+  - B
+  - A
+  - B
+  GabMult2DialogueTypes:
+  - A
+  - A
+  - A
+  - A
+  - A
+  - C
+  - B
+  - C
+  GabMult3DialogueTypes:
+  - C
+  - C
+  - B
+  - C
+  - B
+  - A
+  - C
+  - A
+  GabMultDialogueInt: 0300000005000000070000000b0000000d0000000f0000001100000013000000
+  LevelEndInt: 22
+  GabMultipleActive: 0
+  GabMultType: 
+  GabMultSelection1: {fileID: 0}
+  GabMultSelection2: {fileID: 0}
+  GabMultSelection3: {fileID: 0}
+  GabMultSelection1On: 0
+  GabMultSelection2On: 0
+  GabMultSelection3On: 0
+  ExposedReadingTimer: 10
+  ReadingTimer: 0
+  TimerUI: {fileID: 0}
+  TimerText: {fileID: 0}
