@@ -167,6 +167,11 @@ public class LevelSequence : MonoBehaviour
                 {
                     LevelThreeMults();
                 }
+
+                if (Level5)
+                {
+                    LevelThreeMults();
+                }
                 #endregion
 
                 if (DialogueSequenceInt == LevelEndInt)

@@ -686,7 +686,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExposedSpeed: 7
   GabRigidbody: {fileID: 93689128}
+  speed: 0
   startPosition: {x: 0, y: 0, z: 0}
+  hitInt: 0
 --- !u!50 &93689128
 Rigidbody2D:
   serializedVersion: 4
@@ -8017,17 +8019,80 @@ MonoBehaviour:
   DialogueGabMult2: {fileID: 838735181}
   DialogueGabMult3: {fileID: 291434144}
   GabDialogueList:
-  - Coming soon!
-  - Stop doing that.
+  - Hey, you want to read lines?
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - '[Gab multiple]'
+  - Haha. My pleasure.
   OppDialogueList:
-  - I said, coming soon!
-  - Ok, enough!
-  GabMultDialogueList: []
-  GabMult1DialogueTypes: []
-  GabMult2DialogueTypes: []
-  GabMult3DialogueTypes: []
-  GabMultDialogueInt: 
-  LevelEndInt: 4
+  - Sure. You nervous?
+  - Which part do you want to read?
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Well done. I'm in tears.
+  GabMultDialogueList:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  GabMult1DialogueTypes:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  GabMult2DialogueTypes:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  GabMult3DialogueTypes:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  GabMultDialogueInt: 01000000030000000500000007000000090000000b0000000d0000000f000000
+  LevelEndInt: 18
   GabMultipleActive: 0
   GabMultType: 
   GabMultSelection1: {fileID: 508200162}
