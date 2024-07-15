@@ -43,8 +43,8 @@ public class GameManager : MonoBehaviour
     public bool LevelOver = false;
     public int PlayerOppScore;
     public int PlayerGabScore;
-    PaddleOpp PaddleOpp;
     PaddleGab PaddleGab;
+    AudioManager AudioManager;
 
     private void Start()
     {
@@ -52,8 +52,8 @@ public class GameManager : MonoBehaviour
         LevelOver = false;
         GameMode = 1;
 
-        PaddleOpp = FindObjectOfType<PaddleOpp>();
         PaddleGab = FindObjectOfType<PaddleGab>();
+        AudioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SwitchOffSceneObjects()
     {
+        AudioManager.PlaySound("LevelEnd");
         GameMode = 3;
         pongObjects.SetActive(false);
         talkObjects.SetActive(false);
