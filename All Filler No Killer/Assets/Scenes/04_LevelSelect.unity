@@ -2353,6 +2353,7 @@ MonoBehaviour:
   levelsCompleted: {fileID: 0}
   LevelsCompletedInt: 0
   PlayerPrefsLevelsCompletedInt: 0
+  myScrollRect: {fileID: 240352652}
 --- !u!1 &934695185
 GameObject:
   m_ObjectHideFlags: 0

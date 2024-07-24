@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelListManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class LevelListManager : MonoBehaviour
     public LevelsCompleted levelsCompleted;
     public int LevelsCompletedInt;
     public int PlayerPrefsLevelsCompletedInt;
+    [SerializeField] ScrollRect myScrollRect;
 
     private void Start()
     {
@@ -65,6 +67,26 @@ public class LevelListManager : MonoBehaviour
                 LevelLockedObjects[i+1].SetActive(false);
                 LevelsCompletedInt = i+1;
             }
+        }
+
+        if (IsLevelComplete[0] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0.75f;
+        }
+
+        if (IsLevelComplete[1] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0.45f;
+        }
+
+        if (IsLevelComplete[2] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0.15f;
+        }
+
+        if (IsLevelComplete[3] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0;
         }
     }
 }

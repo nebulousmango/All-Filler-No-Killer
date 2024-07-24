@@ -250,6 +250,7 @@ public class LevelSequence : MonoBehaviour
         FtuePrompts[2].GetComponent<Animator>().SetBool("FtueExit", true);
         ReadingTimer = ExposedReadingTimer;
         TimerUI.SetActive(true);
+        PongFTUE = false;
     }
 
     void SwitchOffGabMultiple()
@@ -326,7 +327,6 @@ public class LevelSequence : MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         Time.timeScale = 1.0f;
         FtuePrompts[3].GetComponent<Animator>().SetBool("FtueExit", true);
-        PongFTUE = false;
     }
 
     // Good dialogue option
