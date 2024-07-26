@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject playerGabPaddle;
     [SerializeField] GameObject playerGabGoal;
     [SerializeField] TextMeshPro playerScoreText;
+    [SerializeField] PaddleGab PaddleGab;
 
     [Header("Dialogue")]
     // GameMode = 0 is when Game is in Pong mode.
@@ -43,7 +44,6 @@ public class GameManager : MonoBehaviour
     public bool LevelOver = false;
     public int PlayerOppScore;
     public int PlayerGabScore;
-    PaddleGab PaddleGab;
     AudioManager AudioManager;
 
     private void Start()
@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
         LevelOver = false;
         GameMode = 1;
 
-        PaddleGab = FindObjectOfType<PaddleGab>();
         AudioManager = FindObjectOfType<AudioManager>();
     }
 

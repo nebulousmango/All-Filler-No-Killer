@@ -49,6 +49,11 @@ public class LevelSequence : MonoBehaviour
     public bool GabMultipleActive;
     public string GabMultType;
 
+    [SerializeField] GameObject OppReactBubble;
+    [SerializeField] GameObject OppReactNone;
+    [SerializeField] GameObject OppReactGood;
+    [SerializeField] GameObject OppReactBad;
+    [SerializeField] GameObject OppReactUgly;
     [SerializeField] GameObject GabMultSelection1;
     [SerializeField] GameObject GabMultSelection2;
     [SerializeField] GameObject GabMultSelection3;
@@ -80,6 +85,29 @@ public class LevelSequence : MonoBehaviour
     {
         if(GabMultipleActive == true)
         {
+            OppReactBubble.SetActive(true);
+            OppReactNone.SetActive(true);
+            if (ReadingTimer > 0 && GabMultType == "A: Good")
+            {
+                OppReactNone.SetActive(false);
+                OppReactGood.SetActive(true);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(false);
+            }
+            if (ReadingTimer > 0 && GabMultType == "B: Bad")
+            {
+                OppReactNone.SetActive(false);
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(true);
+                OppReactUgly.SetActive(false);
+            }
+            if (ReadingTimer > 0 && GabMultType == "C: Ugly")
+            {
+                OppReactNone.SetActive(false);
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(true);
+            }
             if (ReadingTimer > 0)
             {
                 ReadingTimer -= Time.deltaTime;
@@ -93,6 +121,11 @@ public class LevelSequence : MonoBehaviour
                 GabMultSelection3.SetActive(false);
                 SwitchOffGabMultiple();
                 StartCoroutine(SwitchOnPong());
+                OppReactBubble.SetActive(false);
+                OppReactNone.SetActive(false);
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(false);
             }
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && GabMultipleActive == true)
@@ -259,6 +292,11 @@ public class LevelSequence : MonoBehaviour
         TimerUI.SetActive(false);
         StoryManager.b_SwitchOffGabMultDialogue = true;
         StoryManager.b_SwitchOnOppDialogue = true;
+    }
+
+    void MultSequence()
+    {
+
     }
 
     IEnumerator SwitchOnPong()

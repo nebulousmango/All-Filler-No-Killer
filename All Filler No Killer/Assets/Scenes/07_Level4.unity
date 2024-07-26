@@ -5451,6 +5451,7 @@ MonoBehaviour:
   playerGabPaddle: {fileID: 93689125}
   playerGabGoal: {fileID: 1899269345}
   playerScoreText: {fileID: 1753652508}
+  PaddleGab: {fileID: 93689127}
   GameMode: 0
   OppScoreText: {fileID: 549346662}
   OppScoreTextTMP: {fileID: 549346665}
