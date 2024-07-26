@@ -5,17 +5,23 @@ using UnityEngine;
 public class SetUpScene : MonoBehaviour
 {
     [SerializeField] GameObject[] ActivateObjects;
-    [SerializeField] GameObject[] DectivateObjects;
+    [SerializeField] GameObject[] DeactivateObjects;
 
     private void Start()
     {
         for (int i = 0; i < ActivateObjects.Length; i++)
         {
-            ActivateObjects[i].SetActive(true); 
+            if (ActivateObjects[i] != null)
+            {
+                ActivateObjects[i].SetActive(true);
+            }
         }
-        for (int i = 0; i < DectivateObjects.Length; i++)
+        for (int i = 0; i < DeactivateObjects.Length; i++)
         {
-            DectivateObjects[i].SetActive(false);
+            if (DeactivateObjects[i] != null)
+            {
+                DeactivateObjects[i].SetActive(false);
+            }
         }
     }
 }

@@ -9,12 +9,12 @@ public class LevelSequence : MonoBehaviour
 
     GameManager GameManager;
     StoryManager StoryManager;
-    Ball Ball;
-    PaddleOpp PaddleOpp;
     private int DialogueSequenceInt;
     private int DownArrowInt;
     private int PongSequenceInt;
     private bool PongFTUE;
+    private bool GabMultFTUE;
+    private int MultValueInt;
 
     [Header("Level bools")]
     [SerializeField] bool Level1;
@@ -50,7 +50,6 @@ public class LevelSequence : MonoBehaviour
     public string GabMultType;
 
     [SerializeField] GameObject OppReactBubble;
-    [SerializeField] GameObject OppReactNone;
     [SerializeField] GameObject OppReactGood;
     [SerializeField] GameObject OppReactBad;
     [SerializeField] GameObject OppReactUgly;
@@ -66,13 +65,15 @@ public class LevelSequence : MonoBehaviour
     [SerializeField] TMP_Text TimerText;
     bool InteractedWithMult;
 
+    [Header("Pong objects")]
+    [SerializeField] Ball Ball;
+    [SerializeField] PaddleOpp PaddleOpp;
+
     private void Start()
     {
         ReadingTimer = ExposedReadingTimer;
         GameManager = FindObjectOfType<GameManager>();
         StoryManager = FindObjectOfType<StoryManager>();
-        Ball = FindObjectOfType<Ball>();
-        PaddleOpp = FindObjectOfType<PaddleOpp>();
         DialogueGabSing.text = GabDialogueList[0];
 
         if (Level1)
@@ -86,28 +87,7 @@ public class LevelSequence : MonoBehaviour
         if(GabMultipleActive == true)
         {
             OppReactBubble.SetActive(true);
-            OppReactNone.SetActive(true);
-            if (ReadingTimer > 0 && GabMultType == "A: Good")
-            {
-                OppReactNone.SetActive(false);
-                OppReactGood.SetActive(true);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(false);
-            }
-            if (ReadingTimer > 0 && GabMultType == "B: Bad")
-            {
-                OppReactNone.SetActive(false);
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(true);
-                OppReactUgly.SetActive(false);
-            }
-            if (ReadingTimer > 0 && GabMultType == "C: Ugly")
-            {
-                OppReactNone.SetActive(false);
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(true);
-            }
+            SetMultValue();
             if (ReadingTimer > 0)
             {
                 ReadingTimer -= Time.deltaTime;
@@ -122,7 +102,6 @@ public class LevelSequence : MonoBehaviour
                 SwitchOffGabMultiple();
                 StartCoroutine(SwitchOnPong());
                 OppReactBubble.SetActive(false);
-                OppReactNone.SetActive(false);
                 OppReactGood.SetActive(false);
                 OppReactBad.SetActive(false);
                 OppReactUgly.SetActive(false);
@@ -219,7 +198,7 @@ public class LevelSequence : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Space) && InteractedWithMult && !PongFTUE)
+        if (Input.GetKeyDown(KeyCode.Space) && InteractedWithMult && !GabMultFTUE)
         {
             ReadingTimer = 0;
         }
@@ -245,6 +224,7 @@ public class LevelSequence : MonoBehaviour
 
     void SwitchOnGabMultiple()
     {
+        MultValueInt++;
         InteractedWithMult = false;
         ReadingTimer = ExposedReadingTimer;
         GabMultipleActive = true;
@@ -263,6 +243,8 @@ public class LevelSequence : MonoBehaviour
 
     IEnumerator SwitchOnGabMultipleFTUE()
     {
+        MultValueInt++;
+        GabMultFTUE = true;
         PongFTUE = true;
         GabMultipleActive = true;
         StoryManager.b_SwitchOffGabDialogue = true;
@@ -278,12 +260,12 @@ public class LevelSequence : MonoBehaviour
         FtuePrompts[1].SetActive(true);
         yield return new WaitForSeconds(5);
         FtuePrompts[2].SetActive(true);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(3);
         FtuePrompts[1].SetActive(false);
         FtuePrompts[2].GetComponent<Animator>().SetBool("FtueExit", true);
         ReadingTimer = ExposedReadingTimer;
         TimerUI.SetActive(true);
-        PongFTUE = false;
+        GabMultFTUE = false;
     }
 
     void SwitchOffGabMultiple()
@@ -294,9 +276,80 @@ public class LevelSequence : MonoBehaviour
         StoryManager.b_SwitchOnOppDialogue = true;
     }
 
-    void MultSequence()
+    void SetMultValue()
     {
-
+        if (GabMultSelection1On)
+        {
+            if (GabMult1DialogueTypes[MultValueInt - 1] == "A")
+            {
+                GabMultType = "A: Good";
+                OppReactGood.SetActive(true);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(false);
+            }
+            if (GabMult1DialogueTypes[MultValueInt - 1] == "B")
+            {
+                GabMultType = "B: Bad";
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(true);
+                OppReactUgly.SetActive(false);
+            }
+            if (GabMult1DialogueTypes[MultValueInt - 1] == "C")
+            {
+                GabMultType = "C: Ugly";
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(true);
+            }
+        }
+        if (GabMultSelection2On)
+        {
+            if (GabMult2DialogueTypes[MultValueInt - 1] == "A")
+            {
+                GabMultType = "A: Good";
+                OppReactGood.SetActive(true);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(false);
+            }
+            if (GabMult2DialogueTypes[MultValueInt - 1] == "B")
+            {
+                GabMultType = "B: Bad";
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(true);
+                OppReactUgly.SetActive(false);
+            }
+            if (GabMult2DialogueTypes[MultValueInt - 1] == "C")
+            {
+                GabMultType = "C: Ugly";
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(true);
+            }
+        }
+        if (GabMultSelection3On)
+        {
+            if (GabMult3DialogueTypes[MultValueInt - 1] == "A")
+            {
+                GabMultType = "A: Good";
+                OppReactGood.SetActive(true);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(false);
+            }
+            if (GabMult3DialogueTypes[MultValueInt - 1] == "B")
+            {
+                GabMultType = "B: Bad";
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(true);
+                OppReactUgly.SetActive(false);
+            }
+            if (GabMult3DialogueTypes[MultValueInt - 1] == "C")
+            {
+                GabMultType = "C: Ugly";
+                OppReactGood.SetActive(false);
+                OppReactBad.SetActive(false);
+                OppReactUgly.SetActive(true);
+            }
+        }
     }
 
     IEnumerator SwitchOnPong()
@@ -305,15 +358,17 @@ public class LevelSequence : MonoBehaviour
         {
             StartCoroutine(SwitchOnPongFTUE());
         }
-        Ball.GetComponent<Rigidbody2D>().isKinematic = true;
-        PongSequenceInt++;
-        GameManager.GameMode = 0;
-        yield return new WaitForSeconds(0.5f);
-        Ball.Reset();
-        Ball.GetComponent<Rigidbody2D>().isKinematic = false;
-        if (GabMultSelection1On)
+        if (!PongFTUE)
         {
-                if (GabMult1DialogueTypes[PongSequenceInt-1] == "A")
+            Ball.GetComponent<Rigidbody2D>().isKinematic = true;
+            PongSequenceInt++;
+            GameManager.GameMode = 0;
+            yield return new WaitForSeconds(0.5f);
+            Ball.Reset();
+            Ball.GetComponent<Rigidbody2D>().isKinematic = false;
+            if (GabMultSelection1On)
+            {
+                if (GabMult1DialogueTypes[PongSequenceInt - 1] == "A")
                 {
                     GabMultGood();
                 }
@@ -325,6 +380,63 @@ public class LevelSequence : MonoBehaviour
                 {
                     GabMultUgly();
                 }
+            }
+            if (GabMultSelection2On)
+            {
+                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "A")
+                {
+                    GabMultGood();
+                }
+                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "B")
+                {
+                    GabMultBad();
+                }
+                if (GabMult2DialogueTypes[PongSequenceInt - 1] == "C")
+                {
+                    GabMultUgly();
+                }
+            }
+            if (GabMultSelection3On)
+            {
+                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "A")
+                {
+                    GabMultGood();
+                }
+                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "B")
+                {
+                    GabMultBad();
+                }
+                if (GabMult3DialogueTypes[PongSequenceInt - 1] == "C")
+                {
+                    GabMultUgly();
+                }
+            }
+        }
+    }
+
+    IEnumerator SwitchOnPongFTUE()
+    {
+        FtuePrompts[3].SetActive(true);
+        GameManager.GameMode = 0;
+        yield return new WaitForSeconds(3);
+        FtuePrompts[3].GetComponent<Animator>().SetBool("FtueExit", true);
+        Ball.Reset();
+        PongFTUE = false;
+        PongSequenceInt++;
+        if (GabMultSelection1On)
+        {
+            if (GabMult1DialogueTypes[PongSequenceInt - 1] == "A")
+            {
+                GabMultGood();
+            }
+            if (GabMult1DialogueTypes[PongSequenceInt - 1] == "B")
+            {
+                GabMultBad();
+            }
+            if (GabMult1DialogueTypes[PongSequenceInt - 1] == "C")
+            {
+                GabMultUgly();
+            }
         }
         if (GabMultSelection2On)
         {
@@ -356,15 +468,6 @@ public class LevelSequence : MonoBehaviour
                 GabMultUgly();
             }
         }
-    }
-
-    IEnumerator SwitchOnPongFTUE()
-    {
-        FtuePrompts[3].SetActive(true);
-        Time.timeScale = 0.5f;
-        yield return new WaitForSeconds(2.5f);
-        Time.timeScale = 1.0f;
-        FtuePrompts[3].GetComponent<Animator>().SetBool("FtueExit", true);
     }
 
     // Good dialogue option

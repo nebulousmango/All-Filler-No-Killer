@@ -674,7 +674,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActivateObjects:
   - {fileID: 1916289352}
-  DectivateObjects: []
+  DeactivateObjects:
+  - {fileID: 0}
 --- !u!4 &1184955638
 Transform:
   m_ObjectHideFlags: 0
