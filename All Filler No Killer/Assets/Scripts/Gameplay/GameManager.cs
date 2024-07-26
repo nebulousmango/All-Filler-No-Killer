@@ -137,15 +137,6 @@ public class GameManager : MonoBehaviour
         OppScoreText.SetActive(false);
     }
 
-    IEnumerator OppScoreIncreaseTextPlusTwo()
-    {
-        OppScoreTextTMP.text = ("+2");
-        OppScoreText.SetActive(true);
-        yield return new WaitForSeconds(2);
-        OppScoreTextTMP.text = ("+1");
-        OppScoreText.SetActive(false);
-    }
-
     public void ScoreGood()
     {
         StartCoroutine(GabScoreIncreaseText());
@@ -158,6 +149,6 @@ public class GameManager : MonoBehaviour
 
     public void ScoreUgly()
     {
-        StartCoroutine(OppScoreIncreaseTextPlusTwo());
+        StartCoroutine(OppScoreIncreaseText());
     }
 }

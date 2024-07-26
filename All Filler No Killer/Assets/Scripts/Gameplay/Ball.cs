@@ -43,7 +43,7 @@ public class Ball : MonoBehaviour
     public void BallVersionGood()
     {
         rb.gravityScale = 0;
-        speed = 4;
+        speed = 4.5f;
     }
 
     public void BallVersionBad()

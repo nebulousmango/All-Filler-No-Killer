@@ -356,7 +356,7 @@ public class LevelSequence : MonoBehaviour
         GabMultType = "C: Ugly";
         Ball.BallVersionUgly();
         PaddleOpp.speed = 11;
-        GameManager.PlayerOppScore += 2;
+        GameManager.PlayerOppScore++;
         GameManager.ChangeToTextOpp("" + GameManager.PlayerOppScore);
         GameManager.ScoreUgly();
     }
