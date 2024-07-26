@@ -5,7 +5,7 @@ public class PaddleOpp : MonoBehaviour
     // Attached to Player_Opp object in Level scenes.
 
     [SerializeField] GameObject ball;
-    [SerializeField] public float speed;
+    [SerializeField] public float speed = 12;
     [SerializeField] float lerpSpeed = 1f;
     [SerializeField] Rigidbody2D rb;
 

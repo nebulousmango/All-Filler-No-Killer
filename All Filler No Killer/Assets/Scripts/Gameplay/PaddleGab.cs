@@ -30,18 +30,6 @@ public class PaddleGab : MonoBehaviour
     {
         movement = Input.GetAxisRaw("VerticalGab");
         GabRigidbody.velocity = new Vector2(GabRigidbody.velocity.x, movement * speed);
-        if(hitInt == 5)
-        {
-            Ball.speed = 5f;
-            PaddleOpp.speed = 13;
-            speed = 12;
-        }
-        if (hitInt == 10)
-        {
-            Ball.speed = 8f;
-            PaddleOpp.speed = 15;
-            speed = 14;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -82,7 +70,6 @@ public class PaddleGab : MonoBehaviour
         hitInt = 0;
         GabRigidbody.velocity = Vector2.zero;
         speed = ExposedSpeed;
-        Ball.speed = 4;
         PaddleOpp.speed = 8;
     }
 }

@@ -364,7 +364,7 @@ public class LevelSequence : MonoBehaviour
             PongSequenceInt++;
             GameManager.GameMode = 0;
             yield return new WaitForSeconds(0.5f);
-            Ball.Reset();
+            Ball.Launch();
             Ball.GetComponent<Rigidbody2D>().isKinematic = false;
             if (GabMultSelection1On)
             {
@@ -420,7 +420,7 @@ public class LevelSequence : MonoBehaviour
         GameManager.GameMode = 0;
         yield return new WaitForSeconds(3);
         FtuePrompts[3].GetComponent<Animator>().SetBool("FtueExit", true);
-        Ball.Reset();
+        Ball.Launch();
         PongFTUE = false;
         PongSequenceInt++;
         if (GabMultSelection1On)
@@ -474,7 +474,6 @@ public class LevelSequence : MonoBehaviour
     void GabMultGood()
     {
         GabMultType = "A: Good";
-        Ball.BallVersionGood();
         GameManager.PlayerGabScore++;
         GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
         GameManager.ScoreGood();
@@ -484,8 +483,6 @@ public class LevelSequence : MonoBehaviour
     void GabMultBad()
     {
         GabMultType = "B: Bad";
-        Ball.BallVersionBad();
-        PaddleOpp.speed = 9;
         GameManager.PlayerOppScore++;
         GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
         GameManager.ScoreBad();
@@ -495,8 +492,6 @@ public class LevelSequence : MonoBehaviour
     void GabMultUgly()
     {
         GabMultType = "C: Ugly";
-        Ball.BallVersionUgly();
-        PaddleOpp.speed = 11;
         GameManager.PlayerOppScore++;
         GameManager.ChangeToTextOpp("" + GameManager.PlayerOppScore);
         GameManager.ScoreUgly();

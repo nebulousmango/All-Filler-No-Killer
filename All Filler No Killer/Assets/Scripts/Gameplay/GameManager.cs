@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetPosition()
     {
-        ball.GetComponent<Ball>().Reset();
+        ball.GetComponent<Ball>().Launch();
         PaddleGab.Reset();
     }
 
