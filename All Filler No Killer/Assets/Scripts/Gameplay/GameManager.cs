@@ -73,7 +73,8 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(GabScoreIncreaseText());
         PlayerGabScore++;
-        ResetPosition();
+        PaddleGab.Reset();
+        ball.GetComponent<Ball>().LaunchGood();
         ChangeToTextPlayer("" + PlayerGabScore);
         GameMode = 1;
         FindObjectOfType<StoryManager>().PlayHmm();
@@ -83,16 +84,11 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(OppScoreIncreaseText());
         PlayerOppScore++;
-        ResetPosition();
+        PaddleGab.Reset();
+        ball.GetComponent<Ball>().LaunchGood();
         ChangeToTextOpp("" + PlayerOppScore);
         GameMode = 1;
         FindObjectOfType<StoryManager>().PlayHmm();
-    }
-
-    private void ResetPosition()
-    {
-        ball.GetComponent<Ball>().Launch();
-        PaddleGab.Reset();
     }
 
     public void ChangeToTextOpp(string text)
@@ -143,7 +139,7 @@ public class GameManager : MonoBehaviour
 
     public void ScoreBad()
     {
-        StartCoroutine(OppScoreIncreaseText());
+        StartCoroutine(GabScoreIncreaseText());
     }
 
     public void ScoreUgly()

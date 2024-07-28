@@ -22,6 +22,7 @@ public class LevelSequence : MonoBehaviour
     [SerializeField] bool Level3;
     [SerializeField] bool Level4;
     [SerializeField] bool Level5;
+    [SerializeField] bool Level10;
 
     [Header("FTUE prompts")]
     [SerializeField] GameObject[] FtuePrompts;
@@ -170,19 +171,14 @@ public class LevelSequence : MonoBehaviour
                     LevelTwoMults();
                 }
 
-                if (Level3)
+                if (Level3 || Level4 || Level5)
                 {
                     LevelThreeMults();
                 }
 
-                if (Level4)
+                if (Level10)
                 {
-                    LevelThreeMults();
-                }
-
-                if (Level5)
-                {
-                    LevelThreeMults();
+                    LevelTenMults();
                 }
                 #endregion
 
@@ -364,7 +360,18 @@ public class LevelSequence : MonoBehaviour
             PongSequenceInt++;
             GameManager.GameMode = 0;
             yield return new WaitForSeconds(0.5f);
-            Ball.Launch();
+            if (GabMultType == "A: Good")
+            {
+                Ball.LaunchGood();
+            }
+            if (GabMultType == "B: Bad")
+            {
+                Ball.LaunchBad();
+            }
+            if (GabMultType == "C: Ugly")
+            {
+                Ball.LaunchUgly();
+            }
             Ball.GetComponent<Rigidbody2D>().isKinematic = false;
             if (GabMultSelection1On)
             {
@@ -420,7 +427,18 @@ public class LevelSequence : MonoBehaviour
         GameManager.GameMode = 0;
         yield return new WaitForSeconds(3);
         FtuePrompts[3].GetComponent<Animator>().SetBool("FtueExit", true);
-        Ball.Launch();
+        if (GabMultType == "A: Good")
+        {
+            Ball.LaunchGood();
+        }
+        if (GabMultType == "B: Bad")
+        {
+            Ball.LaunchBad();
+        }
+        if (GabMultType == "C: Ugly")
+        {
+            Ball.LaunchUgly();
+        }
         PongFTUE = false;
         PongSequenceInt++;
         if (GabMultSelection1On)
@@ -483,7 +501,7 @@ public class LevelSequence : MonoBehaviour
     void GabMultBad()
     {
         GabMultType = "B: Bad";
-        GameManager.PlayerOppScore++;
+        GameManager.PlayerGabScore++;
         GameManager.ChangeToTextPlayer("" + GameManager.PlayerGabScore);
         GameManager.ScoreBad();
     }
@@ -709,6 +727,81 @@ public class LevelSequence : MonoBehaviour
              && DialogueSequenceInt != GabMultDialogueInt[3] && DialogueSequenceInt != GabMultDialogueInt[4]
               && DialogueSequenceInt != GabMultDialogueInt[5] && DialogueSequenceInt != GabMultDialogueInt[6]
                && DialogueSequenceInt != GabMultDialogueInt[7])
+        {
+            SwitchOnGab();
+        }
+    }
+
+    void LevelTenMults()
+    {
+        if (DialogueSequenceInt == GabMultDialogueInt[0])
+        {
+            StoryManager.b_SwitchOffGabDialogue = true;
+            SwitchOnGabMultiple();
+            DialogueGabMult1.text = GabMultDialogueList[0];
+            DialogueGabMult2.text = GabMultDialogueList[1];
+            DialogueGabMult3.text = GabMultDialogueList[2];
+        }
+
+        if (DialogueSequenceInt == GabMultDialogueInt[1])
+        {
+            StoryManager.b_SwitchOffGabDialogue = true;
+            SwitchOnGabMultiple();
+            DialogueGabMult1.text = GabMultDialogueList[3];
+            DialogueGabMult2.text = GabMultDialogueList[4];
+            DialogueGabMult3.text = GabMultDialogueList[5];
+        }
+
+        if (DialogueSequenceInt == GabMultDialogueInt[2])
+        {
+            StoryManager.b_SwitchOffGabDialogue = true;
+            SwitchOnGabMultiple();
+            DialogueGabMult1.text = GabMultDialogueList[6];
+            DialogueGabMult2.text = GabMultDialogueList[7];
+            DialogueGabMult3.text = GabMultDialogueList[8];
+        }
+
+        if (DialogueSequenceInt == GabMultDialogueInt[3])
+        {
+            StoryManager.b_SwitchOffGabDialogue = true;
+            SwitchOnGabMultiple();
+            DialogueGabMult1.text = GabMultDialogueList[9];
+            DialogueGabMult2.text = GabMultDialogueList[10];
+            DialogueGabMult3.text = GabMultDialogueList[11];
+        }
+
+        if (DialogueSequenceInt == GabMultDialogueInt[4])
+        {
+            StoryManager.b_SwitchOffGabDialogue = true;
+            SwitchOnGabMultiple();
+            DialogueGabMult1.text = GabMultDialogueList[12];
+            DialogueGabMult2.text = GabMultDialogueList[13];
+            DialogueGabMult3.text = GabMultDialogueList[14];
+        }
+
+        if (DialogueSequenceInt == GabMultDialogueInt[5])
+        {
+            StoryManager.b_SwitchOffGabDialogue = true;
+            SwitchOnGabMultiple();
+            DialogueGabMult1.text = GabMultDialogueList[15];
+            DialogueGabMult2.text = GabMultDialogueList[16];
+            DialogueGabMult3.text = GabMultDialogueList[17];
+        }
+
+        if (DialogueSequenceInt == GabMultDialogueInt[6])
+        {
+            StoryManager.b_SwitchOffGabDialogue = true;
+            SwitchOnGabMultiple();
+            DialogueGabMult1.text = GabMultDialogueList[18];
+            DialogueGabMult2.text = GabMultDialogueList[19];
+            DialogueGabMult3.text = GabMultDialogueList[20];
+        }
+
+        // Checks for an odd dialogueSequenceInt and play Gab dialogue
+        if (DialogueSequenceInt % 2 == 1 && DialogueSequenceInt != GabMultDialogueInt[0]
+            && DialogueSequenceInt != GabMultDialogueInt[1] && DialogueSequenceInt != GabMultDialogueInt[2]
+             && DialogueSequenceInt != GabMultDialogueInt[3] && DialogueSequenceInt != GabMultDialogueInt[4]
+              && DialogueSequenceInt != GabMultDialogueInt[5] && DialogueSequenceInt != GabMultDialogueInt[6])
         {
             SwitchOnGab();
         }

@@ -69,24 +69,54 @@ public class LevelListManager : MonoBehaviour
             }
         }
 
+        if (IsLevelComplete[0] == false)
+        {
+            myScrollRect.verticalNormalizedPosition = 1;
+        }
+
         if (IsLevelComplete[0] == true)
         {
-            myScrollRect.verticalNormalizedPosition = 0.75f;
+            myScrollRect.verticalNormalizedPosition = 0.90f;
         }
 
         if (IsLevelComplete[1] == true)
         {
-            myScrollRect.verticalNormalizedPosition = 0.45f;
+            myScrollRect.verticalNormalizedPosition = 0.77f;
         }
 
         if (IsLevelComplete[2] == true)
         {
-            myScrollRect.verticalNormalizedPosition = 0.15f;
+            myScrollRect.verticalNormalizedPosition = 0.64f;
         }
 
         if (IsLevelComplete[3] == true)
         {
-            myScrollRect.verticalNormalizedPosition = 0;
+            myScrollRect.verticalNormalizedPosition = 0.51f;
+        }
+
+        if (IsLevelComplete[4] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0.39f;
+        }
+
+        if (IsLevelComplete[5] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0.26f;
+        }
+
+        if (IsLevelComplete[6] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0.13f;
+        }
+
+        if (IsLevelComplete[7] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0.01f;
+        }
+
+        if (IsLevelComplete[8] == true)
+        {
+            myScrollRect.verticalNormalizedPosition = 0.01f;
         }
     }
 }

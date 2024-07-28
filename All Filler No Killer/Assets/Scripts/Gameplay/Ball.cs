@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
 
     [SerializeField] public float initialSpeed;
     [SerializeField] public Vector2 currentSpeed;
-    [SerializeField] public float speedIncrease = 0.25f;
+    [SerializeField] public float speedIncrease;
     [SerializeField] Rigidbody2D rb;
     public Vector3 startPosition;
     private int hitCounter;
@@ -24,13 +24,34 @@ public class Ball : MonoBehaviour
         currentSpeed = rb.velocity;
     }
 
-    public void Launch()
+    public void LaunchUgly()
     {
+        speedIncrease = 0.23f;
         initialSpeed = 5;
         rb.velocity = Vector2.zero;
         transform.position = startPosition;
         hitCounter = 0;
         rb.velocity = new Vector2(-1, 0) * (initialSpeed + (speedIncrease * hitCounter));
+    }
+
+    public void LaunchBad()
+    {
+        speedIncrease = 0.25f;
+        initialSpeed = 5.5f;
+        rb.velocity = Vector2.zero;
+        transform.position = startPosition;
+        hitCounter = 0;
+        rb.velocity = new Vector2(1, 0) * (initialSpeed + (speedIncrease * hitCounter));
+    }
+
+    public void LaunchGood()
+    {
+        speedIncrease = 0.3f;
+        initialSpeed = 6;
+        rb.velocity = Vector2.zero;
+        transform.position = startPosition;
+        hitCounter = 0;
+        rb.velocity = new Vector2(1, 0) * (initialSpeed + (speedIncrease * hitCounter));
     }
 
     void PlayerBounce(Transform myObject)
@@ -49,9 +70,9 @@ public class Ball : MonoBehaviour
             xDirection = 1;
         }
         yDirection = (ballPos.y - playerPos.y) / myObject.GetComponent<Collider2D>().bounds.size.y;
-        if (yDirection>=0 && yDirection<1)
+        if (yDirection >-1 && yDirection < 1)
         {
-            yDirection = (Random.Range(0.4f, 0.6f));
+            yDirection = (Random.Range(-0.6f, 0.6f));
         }
         rb.velocity = new Vector2(xDirection, yDirection) * (initialSpeed + (speedIncrease * hitCounter));
     }
