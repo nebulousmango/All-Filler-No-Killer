@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3033f384249c1d94ab0a1bc8b3e84e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsLevelComplete: 0000000000
+  IsLevelComplete: 00000000000000000000
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0

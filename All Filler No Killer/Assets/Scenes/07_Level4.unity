@@ -470,7 +470,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db193334a00f66148b3028fd3f1ee14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  initialSpeed: 0
+  currentSpeed: {x: 0, y: 0}
+  speedIncrease: 0
   rb: {fileID: 53185245}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &66242951
@@ -7665,8 +7667,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 311954949}
-  - {fileID: 1051019899}
   - {fileID: 1136006811}
+  - {fileID: 1051019899}
   - {fileID: 1544757284}
   m_Father: {fileID: 0}
   m_RootOrder: 2

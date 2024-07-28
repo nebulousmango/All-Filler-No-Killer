@@ -576,7 +576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db193334a00f66148b3028fd3f1ee14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  initialSpeed: 0
+  currentSpeed: {x: 0, y: 0}
+  speedIncrease: 0
   rb: {fileID: 53185245}
   startPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &66242951
@@ -7483,7 +7485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9dc9148466a188e428892ff467635d0b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ee538600477bf048bf1b841cd19aea7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7745,8 +7747,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 311954949}
-  - {fileID: 1051019899}
   - {fileID: 1772134598}
+  - {fileID: 1051019899}
   - {fileID: 1544757284}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -8315,7 +8317,7 @@ MonoBehaviour:
   DialogueGabMult2: {fileID: 838735181}
   DialogueGabMult3: {fileID: 291434144}
   GabDialogueList:
-  - Hey, you want to read lines?
+  - Hi Mona, you free now?
   - '[Gab multiple]'
   - '[Gab multiple]'
   - '[Gab multiple]'
@@ -8324,69 +8326,69 @@ MonoBehaviour:
   - '[Gab multiple]'
   - '[Gab multiple]'
   - '[Gab multiple]'
-  - Haha. My pleasure.
+  - Whatever. Same time next week?
   OppDialogueList:
-  - Sure. You nervous?
-  - Which part do you want to read?
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - Well done. I'm in tears.
+  - Sure Zeb, sit. What's up?
+  - Okay, what's troubling you?
+  - Go on.
+  - I see. And what else?
+  - Zeb, I'm sensing some friction.
+  - Something else bothering you?
+  - Listen, I'm here for you.
+  - Tell me how I can help.
+  - That's all the time we have.
   GabMultDialogueList:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Um, you know.
+  - I'm feeling like shit these days.
+  - Everything's terrible!
+  - Have you seen the news?
+  - Everything. I hate school.
+  - I don't know.
+  - School is so stupid!
+  - The whole world's falling apart.
+  - I just feel weird, that's all.
+  - What else? Isn't this enough?
+  - I'm going to run away.
+  - Let's see, what else. No clue.
+  - From me? What do you mean?
+  - Well, yeah.
+  - I'm being as cooperative as I can.
+  - Did you even go to college for this?
+  - Why am I here?
+  - Do you get paid to do nothing?
+  - No, you listen!
+  - Yeah right.
+  - I feel like nothing I say matters.
+  - Great, I'll just solve my own problems.
+  - And do your job for you?
+  - Can you write me a prescription?
   GabMult1DialogueTypes:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - B
+  - C
+  - B
+  - A
+  - C
+  - B
+  - C
+  - A
   GabMult2DialogueTypes:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - A
+  - A
+  - C
+  - C
+  - B
+  - A
+  - A
+  - C
   GabMult3DialogueTypes:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - C
+  - B
+  - A
+  - B
+  - A
+  - C
+  - B
+  - B
   GabMultDialogueInt: 01000000030000000500000007000000090000000b0000000d0000000f000000
   LevelEndInt: 18
   GabMultipleActive: 0

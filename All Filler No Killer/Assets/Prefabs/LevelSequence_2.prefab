@@ -97,14 +97,14 @@ MonoBehaviour:
   - When I feel like it.
   - Whenever we finish playing.
   - I'll be home by six.
-  - Eggs? Why do I need to carry eggs?
+  - It's safer if you give them to her.
   - They'll break on the way.
-  - You give them to her.
+  - Eggs? Why do I need to carry eggs?
   - Ok I will, can I go now?
   - I'll tell her you'll bring the eggs.
   - I'll tell her if I see her.
-  - Yes, I am!
-  - No, I'm walking. My tyre needs air.
+  - Yeah, I'll go through the park.
+  - Yes, I am! Going to do wheelies.
   - Not today. I'm taking the tram.
   GabMult1DialogueTypes:
   - A
@@ -113,7 +113,7 @@ MonoBehaviour:
   - B
   - C
   - C
-  - C
+  - A
   - C
   - A
   GabMult2DialogueTypes:
@@ -133,13 +133,17 @@ MonoBehaviour:
   - A
   - A
   - A
-  - A
+  - C
   - B
   - B
   GabMultDialogueInt: 01000000030000000500000007000000090000000b0000000d0000000f00000011000000
   LevelEndInt: 20
   GabMultipleActive: 0
   GabMultType: 
+  OppReactBubble: {fileID: 0}
+  OppReactGood: {fileID: 0}
+  OppReactBad: {fileID: 0}
+  OppReactUgly: {fileID: 0}
   GabMultSelection1: {fileID: 0}
   GabMultSelection2: {fileID: 0}
   GabMultSelection3: {fileID: 0}
@@ -150,3 +154,5 @@ MonoBehaviour:
   ReadingTimer: 0
   TimerUI: {fileID: 0}
   TimerText: {fileID: 0}
+  Ball: {fileID: 0}
+  PaddleOpp: {fileID: 0}

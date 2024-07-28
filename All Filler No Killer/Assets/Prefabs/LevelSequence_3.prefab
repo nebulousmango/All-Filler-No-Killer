@@ -85,8 +85,8 @@ MonoBehaviour:
   - I need some help.
   - I need an extension.
   - I've been distracted this semester.
-  - I've been busy with other things.
   - I haven't even started my paper.
+  - I've been busy with other things.
   - Can you approve my sick leave?
   - Can I take extra classes?
   - Can I get another week for the paper?
@@ -94,8 +94,8 @@ MonoBehaviour:
   - No, no problem! I'll catch up.
   - No, I've just been putting it off.
   - Nothing important, just this and that.
-  - I work evening shifts after class.
   - I can't take this course load.
+  - I work evening shifts after class.
   - Yeah, I really need a break.
   - I was thinking of dropping a year.
   - I can't afford to ease up.
@@ -116,26 +116,30 @@ MonoBehaviour:
   - B
   GabMult2DialogueTypes:
   - A
-  - A
-  - A
-  - A
-  - A
   - C
+  - A
+  - A
   - B
+  - C
+  - C
   - C
   GabMult3DialogueTypes:
   - C
-  - C
-  - B
-  - C
-  - B
   - A
+  - B
   - C
+  - A
+  - A
+  - B
   - A
   GabMultDialogueInt: 0300000005000000070000000b0000000d0000000f0000001100000013000000
   LevelEndInt: 22
   GabMultipleActive: 0
   GabMultType: 
+  OppReactBubble: {fileID: 0}
+  OppReactGood: {fileID: 0}
+  OppReactBad: {fileID: 0}
+  OppReactUgly: {fileID: 0}
   GabMultSelection1: {fileID: 0}
   GabMultSelection2: {fileID: 0}
   GabMultSelection3: {fileID: 0}
@@ -146,3 +150,5 @@ MonoBehaviour:
   ReadingTimer: 0
   TimerUI: {fileID: 0}
   TimerText: {fileID: 0}
+  Ball: {fileID: 0}
+  PaddleOpp: {fileID: 0}
