@@ -23,6 +23,7 @@ public class PaddleOpp : MonoBehaviour
 
     void Update()
     {
+        // Function to move Paddle Opp to ball's position.
         if (ball.transform.position.y > transform.position.y)
         {
             if (rb.velocity.y < 0) rb.velocity = Vector2.zero;
@@ -46,29 +47,30 @@ public class PaddleOpp : MonoBehaviour
             FindObjectOfType<AudioManager>().PlaySound(playBallSfx);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ball"))
-        {
-            Rigidbody2D ball = collision.rigidbody;
-            Collider2D paddle = collision.otherCollider;
 
-            // Gather information about the collision
-            Vector2 ballDirection = ball.velocity.normalized;
-            Vector2 contactDistance = ball.transform.position - paddle.bounds.center;
-            Vector2 surfaceNormal = collision.GetContact(0).normal;
-            Vector3 rotationAxis = Vector3.Cross(Vector3.up, surfaceNormal);
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ball"))
+    //    {
+    //        Rigidbody2D ball = collision.rigidbody;
+    //        Collider2D paddle = collision.otherCollider;
 
-            // Rotate the direction of the ball based on the contact distance
-            // to make the gameplay more dynamic and interesting
-            float maxBounceAngle = 1f;
-            float bounceAngle = (contactDistance.y / paddle.bounds.size.y) * maxBounceAngle;
-            ballDirection = Quaternion.AngleAxis(bounceAngle, rotationAxis) * ballDirection;
+    //        // Gather information about the collision
+    //        Vector2 ballDirection = ball.velocity.normalized;
+    //        Vector2 contactDistance = ball.transform.position - paddle.bounds.center;
+    //        Vector2 surfaceNormal = collision.GetContact(0).normal;
+    //        Vector3 rotationAxis = Vector3.Cross(Vector3.up, surfaceNormal);
 
-            // Re-apply the new direction to the ball
-            ball.velocity = ballDirection * ball.velocity.magnitude;
-        }
-    }
+    //        // Rotate the direction of the ball based on the contact distance
+    //        // to make the gameplay more dynamic and interesting
+    //        float maxBounceAngle = 1f;
+    //        float bounceAngle = (contactDistance.y / paddle.bounds.size.y) * maxBounceAngle;
+    //        ballDirection = Quaternion.AngleAxis(bounceAngle, rotationAxis) * ballDirection;
+
+    //        // Re-apply the new direction to the ball
+    //        ball.velocity = ballDirection * ball.velocity.magnitude;
+    //    }
+    //}
 
     public void Reset()
     {

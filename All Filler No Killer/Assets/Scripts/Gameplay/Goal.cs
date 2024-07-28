@@ -15,10 +15,12 @@ public class Goal : MonoBehaviour
             if (isPlayerGoal)
             {
                 GameObject.Find("GameManager").GetComponent<GameManager>().PlayerOppScored();
+                GameObject.Find("Spark").GetComponent<Animator>().SetBool("SparkExit", true);
             }
             else
             {
                 GameObject.Find("GameManager").GetComponent<GameManager>().PlayerGabScored();
+                GameObject.Find("Spark").GetComponent<Animator>().SetBool("SparkExit", true);
             }
         }
     }

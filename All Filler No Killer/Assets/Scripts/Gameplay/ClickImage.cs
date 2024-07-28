@@ -14,6 +14,7 @@ public class ClickImage : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        FindObjectOfType<AudioManager>().PlaySound("Button");
         TurnThisOn.SetActive(true);
         TurnThisOff.SetActive(false);
         TurnThisOn1.SetActive(true);
