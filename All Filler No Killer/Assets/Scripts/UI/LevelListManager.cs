@@ -20,55 +20,6 @@ public class LevelListManager : MonoBehaviour
     {
         levelsCompleted = FindObjectOfType<LevelsCompleted>();
         IsLevelComplete = levelsCompleted.IsLevelComplete;
-
-        foreach(GameObject LevelUnlockedObject in LevelUnlockedObjects)
-        {
-            LevelUnlockedObject.SetActive(false);
-        }
-
-        foreach (GameObject LevelLockedObject in LevelLockedObjects)
-        {
-            LevelLockedObject.SetActive(true);
-        }
-
-        LevelLockedObjects[0].SetActive(false);
-        LevelUnlockedObjects[0].SetActive(true);
-
-        PlayerPrefsLevelsCompletedInt = PlayerPrefs.GetInt("LevelsCompletedInt");
-
-        if (PlayerPrefsLevelsCompletedInt >= 0)
-        {
-            LevelsCompletedInt = PlayerPrefsLevelsCompletedInt;
-        }
-
-        if (LevelsCompletedInt == 0)
-        {
-            for (int i = 0; i < LevelsCompletedInt + 1; i++)
-            {
-                IsLevelComplete[i] = false;
-            }
-        }
-
-        if (LevelsCompletedInt > 0)
-        {
-            for (int i = 0; i < LevelsCompletedInt; i++)
-            {
-                IsLevelComplete[i] = true;
-            }
-        }
-
-        for (int i = 0; i < IsLevelComplete.Length-1; i++)
-        {
-            if (IsLevelComplete[i] == true)
-            {
-                LevelUnlockedObjects[i].SetActive(true);
-                LevelLockedObjects[i].SetActive(false);
-                LevelUnlockedObjects[i+1].SetActive(true);
-                LevelLockedObjects[i+1].SetActive(false);
-                LevelsCompletedInt = i+1;
-            }
-        }
-
         if (IsLevelComplete[0] == false)
         {
             myScrollRect.verticalNormalizedPosition = 1;
@@ -119,4 +70,81 @@ public class LevelListManager : MonoBehaviour
             myScrollRect.verticalNormalizedPosition = 0.01f;
         }
     }
-}
+
+    private void Update()
+    {
+        if (FindObjectOfType<LevelsCompleted>().GodMode == true)
+        {
+            for (int i = 0; i < LevelLockedObjects.Length - 1; i++)
+            {
+                LevelLockedObjects[i].SetActive(false);
+            }
+
+            for (int i = 0; i < LevelUnlockedObjects.Length - 1; i++)
+            {
+                LevelUnlockedObjects[i].SetActive(true);
+            }
+
+            foreach (GameObject LevelUnlockedObject in LevelUnlockedObjects)
+            {
+                LevelUnlockedObject.SetActive(true);
+            }
+
+            foreach (GameObject LevelLockedObject in LevelLockedObjects)
+            {
+                LevelLockedObject.SetActive(false);
+            }
+        }
+
+        else if (FindObjectOfType<LevelsCompleted>().GodMode == false)
+        { 
+                foreach (GameObject LevelUnlockedObject in LevelUnlockedObjects)
+                {
+                    LevelUnlockedObject.SetActive(false);
+                }
+
+                foreach (GameObject LevelLockedObject in LevelLockedObjects)
+                {
+                    LevelLockedObject.SetActive(true);
+                }
+
+                LevelLockedObjects[0].SetActive(false);
+                LevelUnlockedObjects[0].SetActive(true);
+
+                PlayerPrefsLevelsCompletedInt = PlayerPrefs.GetInt("LevelsCompletedInt");
+
+                if (PlayerPrefsLevelsCompletedInt >= 0)
+                {
+                    LevelsCompletedInt = PlayerPrefsLevelsCompletedInt;
+                }
+
+                if (LevelsCompletedInt == 0)
+                {
+                    for (int i = 0; i < LevelsCompletedInt + 1; i++)
+                    {
+                        IsLevelComplete[i] = false;
+                    }
+                }
+
+                if (LevelsCompletedInt > 0)
+                {
+                    for (int i = 0; i < LevelsCompletedInt; i++)
+                    {
+                        IsLevelComplete[i] = true;
+                    }
+                }
+
+                for (int i = 0; i < IsLevelComplete.Length - 1; i++)
+                {
+                    if (IsLevelComplete[i] == true)
+                    {
+                        LevelUnlockedObjects[i].SetActive(true);
+                        LevelLockedObjects[i].SetActive(false);
+                        LevelUnlockedObjects[i + 1].SetActive(true);
+                        LevelLockedObjects[i + 1].SetActive(false);
+                        LevelsCompletedInt = i + 1;
+                    }
+                }
+            }
+        }
+    }

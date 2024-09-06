@@ -9,6 +9,7 @@ public class LevelSequence : MonoBehaviour
 
     GameManager GameManager;
     StoryManager StoryManager;
+    LevelsCompleted LevelsCompleted;
     private int DialogueSequenceInt;
     private int DownArrowInt;
     private int PongSequenceInt;
@@ -63,6 +64,7 @@ public class LevelSequence : MonoBehaviour
     [SerializeField] float ExposedReadingTimer;
     [SerializeField] float ReadingTimer;
     [SerializeField] GameObject TimerUI;
+    [SerializeField] GameObject TimerPromptUI;
     [SerializeField] TMP_Text TimerText;
     bool InteractedWithMult;
 
@@ -75,7 +77,9 @@ public class LevelSequence : MonoBehaviour
         ReadingTimer = ExposedReadingTimer;
         GameManager = FindObjectOfType<GameManager>();
         StoryManager = FindObjectOfType<StoryManager>();
+        LevelsCompleted = FindObjectOfType<LevelsCompleted>();
         DialogueGabSing.text = GabDialogueList[0];
+        TimerPromptUI.SetActive(false);
 
         if (Level1)
         {
@@ -87,7 +91,10 @@ public class LevelSequence : MonoBehaviour
     {
         if(GabMultipleActive == true)
         {
-            OppReactBubble.SetActive(true);
+            if (LevelsCompleted.GodMode)
+            {
+                OppReactBubble.SetActive(true);
+            }
             SetMultValue();
             if (ReadingTimer > 0)
             {
@@ -102,14 +109,18 @@ public class LevelSequence : MonoBehaviour
                 GabMultSelection3.SetActive(false);
                 SwitchOffGabMultiple();
                 StartCoroutine(SwitchOnPong());
-                OppReactBubble.SetActive(false);
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(false);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactBubble.SetActive(false);
+                    OppReactGood.SetActive(false);
+                    OppReactBad.SetActive(false);
+                    OppReactUgly.SetActive(false);
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && GabMultipleActive == true)
         {
+            TimerPromptUI.SetActive(true);
             InteractedWithMult = true;
             DownArrowInt++;
             if (DownArrowInt == 1)
@@ -267,6 +278,7 @@ public class LevelSequence : MonoBehaviour
     void SwitchOffGabMultiple()
     {
         GabMultipleActive = false;
+        TimerPromptUI.SetActive(false);
         TimerUI.SetActive(false);
         StoryManager.b_SwitchOffGabMultDialogue = true;
         StoryManager.b_SwitchOnOppDialogue = true;
@@ -279,23 +291,32 @@ public class LevelSequence : MonoBehaviour
             if (GabMult1DialogueTypes[MultValueInt - 1] == "A")
             {
                 GabMultType = "A: Good";
-                OppReactGood.SetActive(true);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(false);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(true);
+                    OppReactBad.SetActive(false);
+                    OppReactUgly.SetActive(false);
+                }
             }
             if (GabMult1DialogueTypes[MultValueInt - 1] == "B")
             {
                 GabMultType = "B: Bad";
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(true);
-                OppReactUgly.SetActive(false);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(false);
+                    OppReactBad.SetActive(true);
+                    OppReactUgly.SetActive(false);
+                }
             }
             if (GabMult1DialogueTypes[MultValueInt - 1] == "C")
             {
                 GabMultType = "C: Ugly";
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(true);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(false);
+                    OppReactBad.SetActive(false);
+                    OppReactUgly.SetActive(true);
+                }
             }
         }
         if (GabMultSelection2On)
@@ -303,23 +324,32 @@ public class LevelSequence : MonoBehaviour
             if (GabMult2DialogueTypes[MultValueInt - 1] == "A")
             {
                 GabMultType = "A: Good";
-                OppReactGood.SetActive(true);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(false);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(true);
+                    OppReactBad.SetActive(false);
+                    OppReactUgly.SetActive(false);
+                }
             }
             if (GabMult2DialogueTypes[MultValueInt - 1] == "B")
             {
                 GabMultType = "B: Bad";
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(true);
-                OppReactUgly.SetActive(false);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(false);
+                    OppReactBad.SetActive(true);
+                    OppReactUgly.SetActive(false);
+                }
             }
             if (GabMult2DialogueTypes[MultValueInt - 1] == "C")
             {
                 GabMultType = "C: Ugly";
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(true);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(false);
+                    OppReactBad.SetActive(false);
+                    OppReactUgly.SetActive(true);
+                }
             }
         }
         if (GabMultSelection3On)
@@ -327,23 +357,32 @@ public class LevelSequence : MonoBehaviour
             if (GabMult3DialogueTypes[MultValueInt - 1] == "A")
             {
                 GabMultType = "A: Good";
-                OppReactGood.SetActive(true);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(false);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(true);
+                    OppReactBad.SetActive(false);
+                    OppReactUgly.SetActive(false);
+                }
             }
             if (GabMult3DialogueTypes[MultValueInt - 1] == "B")
             {
                 GabMultType = "B: Bad";
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(true);
-                OppReactUgly.SetActive(false);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(false);
+                    OppReactBad.SetActive(true);
+                    OppReactUgly.SetActive(false);
+                }
             }
             if (GabMult3DialogueTypes[MultValueInt - 1] == "C")
             {
                 GabMultType = "C: Ugly";
-                OppReactGood.SetActive(false);
-                OppReactBad.SetActive(false);
-                OppReactUgly.SetActive(true);
+                if (LevelsCompleted.GodMode)
+                {
+                    OppReactGood.SetActive(false);
+                    OppReactBad.SetActive(false);
+                    OppReactUgly.SetActive(true);
+                }
             }
         }
     }

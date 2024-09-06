@@ -8973,6 +8973,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 461931009}
     - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
+      propertyPath: TimerPromptUI
+      value: 
+      objectReference: {fileID: 2025231378}
+    - target: {fileID: 783159164181923523, guid: 22d31d361787d7b478fbe6361d5a8bbd, type: 3}
       propertyPath: OppReactBubble
       value: 
       objectReference: {fileID: 1358420183}
